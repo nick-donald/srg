@@ -241,4 +241,10 @@ $(document).ready(function(){
         $('#mobile-search').toggle('slide', { direction: 'up', easing: 'easeInOutExpo'});
     });
 
+    // adjust height of detail pages
+
+    // var pageHeight = $('.main-content-container').height();
+
+    //$('.detail-page').css({height: $(this).height + pageHeight});
+
 });

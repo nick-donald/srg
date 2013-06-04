@@ -6,11 +6,22 @@ SRG::Application.routes.draw do
 
   root to: 'static_pages#home'
 
+  # consulting links
   match '/consulting', to: 'static_pages#consulting_main'
   match '/consulting/supermarkets', to: 'static_pages#consulting_supermarket'
   match '/consulting/wholesalers', to: 'static_pages#consulting_wholesale'
   match '/consulting/manufacturers', to: 'static_pages#consulting_manufacture'
 
+  # litigation links
+  match '/litigation', to: 'static_pages#litigation_main'
+  match '/litigation/dispute', to: 'static_pages#litigation_dispute'
+  match '/litigation/antitrust', to: 'static_pages#litigation_antitrust'
+  match '/litigation/expertwitness', to: 'static_pages#litigation_expertwitness'
+
+  # financial services links
+  match '/financialservices', to: 'static_pages#finance_main'
+  match '/financialservices/duedilligence', to: 'static_pages#finance_duedilligence'
+  match '/financialservices/ma', to: 'static_pages#finance_ma'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
