@@ -1,0 +1,13 @@
+.dispute {
+	background-image: url(dispute.jpg);
+}
+
+.trust {
+	background-image: url(antitrust.jpg);
+	background-position: center;
+}
+
+.witness {
+	background-image: url(witness.png);
+	background-position: center;
+}
