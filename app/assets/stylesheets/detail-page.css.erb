@@ -88,7 +88,6 @@
 
 .areas-select-box {
 	width: 960px;
-	height: 400px;
 	margin-top: 20px;
 	text-align: center;
 	margin-left: auto;
@@ -97,7 +96,7 @@
 
 .areas-select-link {
 	width: 30%;
-	height: 100%;
+	height: 400px;
 	display: inline-block;
 	margin-right: 10px;
 	vertical-align: top;
@@ -185,6 +184,41 @@
 	width: 100%;
 }
 
+/* bios page */
+
+.bios {
+	border: none;
+}
+
+.bios-side-nav {
+	font-size: 0.7em;
+	position: fixed;
+	border-top: solid thin;
+	padding-top: 10px;
+	margin-top: 0;
+}
+
+.bios-side-nav li {
+	padding: 4px;
+}
+
+.bio-title {
+	font-size: 1.5em;
+}
+
+.bio {
+	border-bottom: solid thin;
+	margin-top: 20px;
+}
+
+.bio-content {
+	padding-left: 15px;
+}
+
+.julianarogers {
+	margin-bottom: 20px;
+}
+
 @media all and (min-width: 790px) and (max-width: 959px) {
 	.detail-text {
 		width: 790px;
@@ -215,13 +249,11 @@
 
 	.areas-select-box {
 		width: 550px;
-		height: 1000px;
 	}
 
 	.areas-select-link {
 		display: block;
 		width: 100%;
-		height: 30%;
 		margin-top: 20px;
 	}
 
@@ -273,13 +305,11 @@
 
 	.areas-select-box {
 		width: 95%;
-		height: 1000px;
 	}
 
 	.areas-select-link {
 		display: block;
 		width: 100%;
-		height: 30%;
 		margin-top: 20px;
 	}
 
@@ -313,6 +343,15 @@
 		width: 95%;
 		margin-left: auto;
 		margin-right: auto;
+	}
+
+	.bios {
+		display: none;
+		z-index: 1000;
+	}
+
+	.bio-container {
+		margin-top: 60px;
 	}
 
 }

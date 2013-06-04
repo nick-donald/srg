@@ -23,6 +23,9 @@ SRG::Application.routes.draw do
   match '/financialservices/duedilligence', to: 'static_pages#finance_duedilligence'
   match '/financialservices/ma', to: 'static_pages#finance_ma'
 
+  # other page links 
+  match '/bios', to: 'static_pages#bios'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
