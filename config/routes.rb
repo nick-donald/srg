@@ -1,4 +1,7 @@
 SRG::Application.routes.draw do
+  resources :users
+  resources :sessions, only: [:new, :create, :destroy]
+  resources :articles, only: [:create, :destroy]
 
   get "static_pages/home"
 
@@ -23,8 +26,20 @@ SRG::Application.routes.draw do
   match '/financialservices/duedilligence', to: 'static_pages#finance_duedilligence'
   match '/financialservices/ma', to: 'static_pages#finance_ma'
 
+  # marketing and advertising links
+  match '/marketingadvertising', to: 'static_pages#marketingadvertising_main'
+  match '/marketingadvertising/adservices', to: 'static_pages#marketingadvertising_adservices'
+  match '/marketingadvertising/digitalmarketing', to: 'static_pages#marketingadvertising_digitalmarketing'
+
   # other page links 
   match '/bios', to: 'static_pages#bios'
+  match '/press', to: 'static_pages#press_main'
+
+  # user routes
+  match '/signup', to: 'users#new'
+  match '/new', to: 'users#new'
+  match 'admin', to: 'sessions#new'
+  match 'signout', to: 'sessions#destroy', via: :delete
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

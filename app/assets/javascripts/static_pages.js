@@ -10,7 +10,7 @@ $(document).ready(function(){
 
         var navPos = $('bios-side-nav').position();
 
-        var height = 0.7 * $('.detail-page').height()
+        var height = 0.83 * $('.detail-page').height()
         
         if ($window.scrollTop() >= 50) {
 

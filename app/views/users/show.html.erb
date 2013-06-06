@@ -1,0 +1,16 @@
+<%= @user.name %>, <%= @user.username %>
+
+
+
+stuff
+
+<% if signed_in? %>
+	you are signed in brah
+	<div class="mainnav">
+		<li><%= link_to "Sign Out", signout_path, method: "delete" %></li>
+	</div>
+<% else %>
+	you aren't signed in
+<% end %>
+
+<%= render 'shared/article_form' %>
