@@ -2,25 +2,47 @@
 
 <%= render 'layouts/admin_header' %>
 
+<div id="content" class="admin-content">
 <% if signed_in? %>
-	you are signed in
+	<div class="section-title"><span>You are signed in as <%= @user.username %></span></div>
 
 	<div id="content-post">
 		<%= render 'shared/article_form' %>
 	</div>
 
-	<%= will_paginate @articles %>
-
-	<% @articles.each do |article| %>
-	<li>
-		<%= link_to article.title, article %>
-		<%= link_to "Edit", edit_article_path(article) %>
-	</li>
+	<% flash.each do |key, value| %>
+		<%= content_tag(:div, value, class: "alert alert-#{key}") %>
 	<% end %>
 
+	<%= will_paginate @articles %>
+
+<table class="admin-table">
+		<thead>
+			<tr>
+				<th scope="col" class="first-col">Article Title</th>
+				<th scope="col">Article Type</th>
+				<th scope="col">Date Posted</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @articles.each do |article| %>
+				<tr>
+					<td><span><%= link_to article.title, article %> |
+					<%= link_to "Edit", edit_article_path(article), class: "admin-edit" %> |
+					<%= link_to "Delete", article, class: "admin-edit", method: :delete,
+									  data: { confirm: "You sure?" } %></span></td>
+					<td><span><%= article.article_type %></span></td>
+					<td><span><%= article.created_at.strftime("%m/%d/%y") %></span></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+
+	<%= will_paginate @articles %>
 
 
 <% else %>
 	you aren't signed in
 <% end %>
+</div>
 

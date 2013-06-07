@@ -276,4 +276,8 @@ $(document).ready(function(){
         $('body,html').animate({ scrollTop:  ( posTop + 60 ) });        
     });
 
+    $('.admin-new-article').click(function(){
+        $('#content-post').toggle({direction: 'up'});
+    });
+
 });

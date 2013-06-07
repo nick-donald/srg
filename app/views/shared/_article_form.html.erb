@@ -1,4 +1,10 @@
+<div id="new-article-form">
 <%= form_for(@article, :html => { :multipart => true }) do |f| %>
+
+	<%= f.label :Article_Type %>
+	<%= f.radio_button(:article_type, "SRG News") %> SRG News <br />
+	<%= f.radio_button(:article_type, "Industry News") %> Industry News
+
 	<%= f.label :title %>
 	<%= f.text_field :title, maxlength: 70 %>
 
@@ -24,3 +30,4 @@
 
 	<%= f.submit "Post" %>
 <% end %>
+</div>

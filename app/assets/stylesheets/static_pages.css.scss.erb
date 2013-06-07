@@ -632,9 +632,13 @@ a {
 }
 
 .article-pic {
-    width: 250px;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
+}
+
+.article-pic img {
+    width: inherit;
 }
 
 
@@ -993,6 +997,10 @@ span.quote-author {
 
 
 @media all and (min-width: 790px) and (max-width: 959px) {
+
+    .article {
+        height: auto;
+    }
     .wrapper {
         width: 760px;
     }

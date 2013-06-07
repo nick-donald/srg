@@ -148,14 +148,15 @@
                 </div>
                 <div class="article">
                     <div class="article-pic">
+                        <img src="<%= @first_article.photo.url %>">
                     </div>
                     <div class="article-content">
                         <div class="article-title">
-                            <span>Burt Flickinger Presents at the 2013 IGA Global Rally</span>
+                            <a href="articles/<%= @first_article.id %>"><span><%= @first_article.title %></span></a>
                         </div>
                     </div>
                     <div class="article-preview">
-                            <span>Burt Flickinger presents his insights to the 2013 IGA global rally, the annual meeting attended by IGA retailers from around the world.</span>
+                            <span><%= @first_article.short_description %></span>
                     </div>
                 </div>
             </div>
@@ -165,15 +166,15 @@
                 </div>
                 <div class="article">
                     <div class="article-pic">
-                        <img src="<%= @first_article.photo.url %>" width=250>
+                        <img src="<%= @first_srg_article.photo.url %>">
                     </div>
                     <div class="article-content">
                         <div class="article-title">
-                            <a href="articles/<%= @first_article.id %>"><span><%= @first_article.title %></span>
+                            <a href="articles/<%= @first_srg_article.id%>"><span><%= @first_srg_article.title %></span></a>
                         </div>
                     </div>
                     <div class="article-preview">
-                        <span><%= @first_article.short_description %></span>
+                        <span><%= @first_srg_article.short_description %></span>
                     </div>
                 </div>
             </div>

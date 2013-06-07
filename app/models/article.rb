@@ -1,5 +1,6 @@
 class Article < ActiveRecord::Base
- 	attr_accessible :author, :content, :title, :date, :photo, :short_description, :publication_name, :publication_link
+ 	attr_accessible :author, :content, :title, :date, :photo, :short_description,
+ 	 :publication_name, :publication_link, :article_type
  	validates :user_id, presence: true
 
  	validates :title, presence: true, length: { maximum: 70 }

@@ -10,15 +10,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<%= render 'layouts/header' unless (params[:controller] == 'users') %>
 
-	<% flash.each do |key, value| %>
-		<div class="alert alert-<%= key %>"><%= value %></div>
-	<% end %>
+  <% if (params[:controller] == 'static_pages') || (params[:controller] == 'articles') && (params[:action] != 'edit') %>
+    <%= render 'layouts/header' %>
+  <% end %>
 
 	<%= yield %>
 
-	<%= render 'layouts/footer' unless (params[:controller] == 'users') %>
+  <% if (params[:controller] == 'static_pages') || (params[:controller] == 'articles') && (params[:action] != 'edit') %>
+    <%= render 'layouts/footer'%>
+    <% end %>
+
 
 </body>
 </html>

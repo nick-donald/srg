@@ -2,6 +2,10 @@
 	<%= f.label :title %>
 	<%= f.text_field :title, maxlength: 70 %>
 
+	<%= f.label :Article_Type %>
+	<%= f.radio_button(:article_type, "SRG News") %> SRG News <br />
+	<%= f.radio_button(:article_type, "Industry News") %> Industry News
+
 	<%= f.label :author %>
 	<%= f.text_field :author %>
 
@@ -20,6 +24,7 @@
 	<%= f.label :content %>
 	<%= f.cktext_area :content, :ckeditor => {:language => "usa"} %>
 
+	<%= f.label :Upload_Photo %>
 	<%= f.file_field :photo %>
 
 	<%= f.submit "Save Changes" %>

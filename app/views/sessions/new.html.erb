@@ -1,10 +1,18 @@
-<%= form_for(:session, url: sessions_path) do |f| %>
+<%= provide(:title, "Admin") %>
+<%= render 'layouts/admin_header' %>
 
-	<%= f.label :username %>
-	<%= f.text_field :username %>
+<div id="content" class="admin-content">
+	<div class="section-title admin-section"><span>Log in to the SRG Administrator Dashboard</span></div>
+	<div id="admin-login">
+		<%= form_for(:session, url: sessions_path) do |f| %>
 
-	<%= f.label :password %>
-	<%= f.password_field :password %>
+			<%= f.label :username %>
+			<%= f.text_field :username %>
 
-	<%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
-<% end %>
+			<%= f.label :password %>
+			<%= f.password_field :password %>
+
+			<%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
+		<% end %>
+	</div>
+</div>

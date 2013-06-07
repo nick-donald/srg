@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 	def show
 		@user = User.find(params[:id])
 		@article = current_user.articles.build if signed_in?
-		@articles = Article.paginate(page: params[:page],  per_page: 3)
+		@articles = Article.paginate(page: params[:page],  per_page: 10)
   		@feed_items = current_user.feed
 
 		# render layout: false

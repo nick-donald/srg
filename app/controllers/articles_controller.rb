@@ -8,13 +8,17 @@ class ArticlesController < ApplicationController
 	def create
 		@article = current_user.articles.build(params[:article])
 		if @article.save
-			redirect_to users_path
+			flash[:success] = "Article Posted"
+			redirect_to current_user
 		else
 			render 'static_pages/home'
 		end
 	end
 
 	def destroy
+		Article.find(params[:id]).destroy
+		flash[:success] = "Article deleted"
+		redirect_to current_user
 	end
 
 	def show
