@@ -10,7 +10,7 @@ $(document).ready(function(){
 
         var navPos = $('bios-side-nav').position();
 
-        var height = 0.83 * $('.detail-page').height()
+        var height = 0.8 * $('.detail-page').height()
         
         if ($window.scrollTop() >= 50) {
 
@@ -26,7 +26,7 @@ $(document).ready(function(){
         }
 
         if ( $window.scrollTop() >= height ) {
-            $('.bios-side-nav').css({ position: 'absolute' }).css({ top: height });
+            $('.bios-side-nav').css({ position: 'absolute' }).css({ top: height  });
         }
 
         if ( $window.scrollTop() < height ) {

@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require foundation
 //= require jquery-ui
+//= require ckeditor/init
 //= require_tree .
 
 $(document).foundation();

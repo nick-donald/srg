@@ -1,0 +1,8 @@
+<li id="<%= feed_item.id %>">
+	<span class="author"><%= feed_item.author %></span>
+	<span class="timestamp">
+	Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
+	Posted at <%= feed_item.created_at.strftime("%m/%d/%Y") %>
+	</span>
+	<a href="/articles/<%= feed_item.id %>">read</a>
+</li>

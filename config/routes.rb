@@ -1,7 +1,7 @@
 SRG::Application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-  resources :articles, only: [:create, :destroy]
+  resources :articles
 
   get "static_pages/home"
 
@@ -40,6 +40,9 @@ SRG::Application.routes.draw do
   match '/new', to: 'users#new'
   match 'admin', to: 'sessions#new'
   match 'signout', to: 'sessions#destroy', via: :delete
+
+  # articles routes
+  match '/articles2', to: 'static_pages#articles2'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

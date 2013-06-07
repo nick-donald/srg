@@ -1,16 +1,26 @@
-<%= @user.name %>, <%= @user.username %>
+<%= provide(:title, "Admin") %>
 
-
-
-stuff
+<%= render 'layouts/admin_header' %>
 
 <% if signed_in? %>
-	you are signed in brah
-	<div class="mainnav">
-		<li><%= link_to "Sign Out", signout_path, method: "delete" %></li>
+	you are signed in
+
+	<div id="content-post">
+		<%= render 'shared/article_form' %>
 	</div>
+
+	<%= will_paginate @articles %>
+
+	<% @articles.each do |article| %>
+	<li>
+		<%= link_to article.title, article %>
+		<%= link_to "Edit", edit_article_path(article) %>
+	</li>
+	<% end %>
+
+
+
 <% else %>
 	you aren't signed in
 <% end %>
 
-<%= render 'shared/article_form' %>

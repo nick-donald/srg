@@ -1,0 +1,14 @@
+<div id="admin_header">
+	<div class="wrapper">
+		<div class="pull-left">
+			<h1>SRG Admin</h1>
+		</div>
+		<div class="pull-right">
+			<% if signed_in? %>
+				<div class="admin-signout">
+					<%= link_to "Sign Out", signout_path, method: "delete" %>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>

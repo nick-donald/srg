@@ -2,10 +2,15 @@ class UsersController < ApplicationController
 	before_filter :signed_in_user, only: [:index, :edit, :update, :destroy]
 	before_filter :correct_user, only: [:edit, :update]
 	before_filter :admin_user, only: :destroy
+	
 
 	def show
 		@user = User.find(params[:id])
 		@article = current_user.articles.build if signed_in?
+		@articles = Article.paginate(page: params[:page],  per_page: 3)
+  		@feed_items = current_user.feed
+
+		# render layout: false
 	end
 
 	def new

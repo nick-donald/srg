@@ -1,0 +1,9 @@
+<% if @feed_items.any? %>
+	<table>
+		<th>Title</th>
+		<th>News Date</th>
+		<th>Date Created</th>
+		<%= render partial: 'shared/feed_item', collection: @feed_items %>
+	</table>
+	<%= will_paginate @feed_items %>
+<% end %>

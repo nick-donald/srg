@@ -1,0 +1,19 @@
+<div class="total-article-container">
+	<div class="wrapper">
+
+		<div class="article-detail-container">
+			<div class="article-detail-title">
+				<span><%= @article.title %></span>
+			</div>
+			<div class="article-detail-author">
+				<span>By <%= @article.author %>, <%= link_to @article.publication_name, @article.publication_link, class: "article-external-link" %></span>
+				<br />
+				<span><%= @article.date.strftime("%B %d, %Y") %></span>
+			</div>
+			<div class="article-detail-content">
+				<%= image_tag(@article.photo.url, width: '200', id: 'article-detail-img') %>
+				<p><%= sanitize @article.content %></p>
+			</div>
+		</div>
+	</div>
+</div>

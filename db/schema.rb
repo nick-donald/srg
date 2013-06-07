@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130605190930) do
+ActiveRecord::Schema.define(:version => 20130607170500) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -19,8 +19,15 @@ ActiveRecord::Schema.define(:version => 20130605190930) do
     t.string   "content"
     t.datetime "date"
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.string   "short_description"
+    t.string   "publication_name"
+    t.string   "publication_link"
   end
 
   add_index "articles", ["user_id", "created_at"], :name => "index_articles_on_user_id_and_created_at"
