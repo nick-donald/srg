@@ -2,7 +2,14 @@ class ArticlesController < ApplicationController
 	before_filter :signed_in_user, only: [:create, :destroy]
 
 	def index
-		@articles = Article.paginate(page: params[:page],  per_page: 3)
+		# @articles = Article.paginate(page: params[:page],  per_page: 3)
+
+		@search = Article.search do
+    		fulltext params[:search]
+    		paginate :page => params[:page], :per_page => 10
+    	end
+
+    	@articles = @search.results
 	end
 
 	def create

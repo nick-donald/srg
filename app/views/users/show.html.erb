@@ -14,6 +14,7 @@
 		<%= content_tag(:div, value, class: "alert alert-#{key}") %>
 	<% end %>
 
+	<%= page_entries_info @articles %>
 	<%= will_paginate @articles %>
 
 <table class="admin-table">
@@ -26,7 +27,7 @@
 		</thead>
 		<tbody>
 			<% @articles.each do |article| %>
-				<tr>
+				<tr class="admin-article">
 					<td><span><%= link_to article.title, article %> |
 					<%= link_to "Edit", edit_article_path(article), class: "admin-edit" %> |
 					<%= link_to "Delete", article, class: "admin-edit", method: :delete,

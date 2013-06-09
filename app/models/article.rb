@@ -11,4 +11,8 @@ class Article < ActiveRecord::Base
 
  	scope :recent, limit: 1, order: 'created_at DESC'
 
+ 	searchable do
+		text :content
+	end
+
 end

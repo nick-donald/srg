@@ -42,13 +42,13 @@ $(document).ready(function(){
         var winSize = $(window).width();
         var valEdges = (winSize - 1000) / 2;
         var valInsideEdge = x - valEdges;
-        $(this).find('div.subnav-div').css('left', -valInsideEdge);
+        //$(this).find('div.subnav-div').css('left', -valInsideEdge);
         $(this).find('div.subnav-div').show();
         
     });
     
     $('ul.mainnav li').mouseleave(function(){
-        $(this).find('div.subnav-div').hide();
+        $(this).find('.subnav-div').hide();
     })
     
     //$("ul.mainnav li").mouseover(function() { //When trigger is clicked...

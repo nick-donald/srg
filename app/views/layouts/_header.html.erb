@@ -7,8 +7,9 @@
                 <div class="mobile-button" id="menu"></div>
                 <div class="mobile-button" id="search"></div>
                 <div id="desktop-search">
-                    <form>
-                        <input type="text" class="big-search" placeholder="Search SRG">
+                    <%= form_tag articles_path, :method => :get do %>
+                        <%= text_field_tag :search, params[:search], class: "big-search", placeholder: "Search SRG" %>
+                    <% end %>
                     </form>
                 </div>
             </div>
@@ -43,9 +44,9 @@
                                     <div class="nav-title">
                                         <span>Supermarkets</span>
                                     </div>
-                                    <div class="nav-description">
+                                    <!-- <div class="nav-description">
                                         <span>Custom strategic planning on all aspects of the business with guidance from former top exeuctives</span>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </a>
                             <a href="/consulting/wholesalers">
@@ -53,9 +54,9 @@
                                     <div class="nav-title">
                                         <span>Wholesalers</span>
                                     </div>
-                                    <div class="nav-description">
+                                    <!-- <div class="nav-description">
                                         <span>Stategy planning based around our intense understanding of the wholesaler and retail landscape</span>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </a>
                             <a href="/consulting/manufacturers">
@@ -63,9 +64,9 @@
                                     <div class="nav-title">
                                         <span>Manufacturers</span>
                                     </div>
-                                    <div class="nav-description">
+                                    <!-- <div class="nav-description">
                                         <span>Solutions for large scale and private brand manufacturers with an emphasis on consumer tastes</span>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </a>
                         </div>

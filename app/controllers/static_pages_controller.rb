@@ -12,6 +12,8 @@ class StaticPagesController < ApplicationController
   	@first_article = Article.find_by_created_at(@create_max)
     @first_srg_article = Article.find_by_created_at(@srg_create_max)
 
+    
+
   	# @first_article2 = Article.find_by_id(@articles.order('value DESC').first)
   end
 

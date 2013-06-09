@@ -6,9 +6,15 @@ gem 'faker', '1.0.1'
 gem 'will_paginate', '3.0.3'
 gem 'paperclip', '~> 3.0'
 gem 'ckeditor'
+gem 'sunspot_rails'
+
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
+
+group :development do 
+	gem 'sunspot_solr'
+end
 
 group :development, :test do 
 	gem 'sqlite3', '1.3.5'
