@@ -12,8 +12,6 @@ class StaticPagesController < ApplicationController
   	@first_article = Article.find_by_created_at(@create_max)
     @first_srg_article = Article.find_by_created_at(@srg_create_max)
 
-    # @video = Video.find_by_id(3)
-
     videos = Video.select { |video| video.enabled == true }
 
     videos_sort = videos.sort! { |a,b| b.created_at <=> a.created_at }
