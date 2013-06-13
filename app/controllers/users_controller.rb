@@ -8,7 +8,6 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		@article = current_user.articles.build if signed_in?
 		@articles = Article.paginate(page: params[:page],  per_page: 10)
-  		@feed_items = current_user.feed
 
   		@video = current_user.videos.build if signed_in?
   		@videos = Video.paginate(page: params[:page],  per_page: 10)
