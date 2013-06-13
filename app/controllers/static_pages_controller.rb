@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
   def home
-  	@news_articles = Article.select { |article| article.article_type == "Industry News" }
-    @srg_articles = Article.select { |article| article.article_type == "SRG News" }
+  	@news_articles = Article.select { |article| article.article_type == "Industry News" && article.enabled == true }
+    @srg_articles = Article.select { |article| article.article_type == "SRG News" && article.enabled == true }
 
   	createds = @news_articles.map(&:created_at)
     srg_createds = @srg_articles.map(&:created_at)
@@ -12,9 +12,16 @@ class StaticPagesController < ApplicationController
   	@first_article = Article.find_by_created_at(@create_max)
     @first_srg_article = Article.find_by_created_at(@srg_create_max)
 
-    
+    # @video = Video.find_by_id(3)
 
-  	# @first_article2 = Article.find_by_id(@articles.order('value DESC').first)
+    videos = Video.select { |video| video.enabled == true }
+
+    videos_sort = videos.sort! { |a,b| b.created_at <=> a.created_at }
+
+    @video = videos_sort[0]
+    @video_1 = videos_sort[1]
+    @video_2 = videos_sort[2]
+
   end
 
   def help

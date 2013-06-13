@@ -1,6 +1,6 @@
 <%= form_for(@article, :html => { :multipart => true }) do |f| %>
 	<%= f.label :title %>
-	<%= f.text_field :title, maxlength: 70 %>
+	<%= f.text_field :title, maxlength: 80 %>
 
 	<%= f.label :Article_Type %>
 	<%= f.radio_button(:article_type, "SRG News") %> SRG News <br />
@@ -24,8 +24,26 @@
 	<%= f.label :content %>
 	<%= f.cktext_area :content, :ckeditor => {:language => "usa"} %>
 
+	<div class="article-form-input">
+		<%= f.label :seo_title, class: "form-title" %>
+		<%= f.cktext_area :seo_title %>
+	</div>
+
+	<div class="article-form-input">
+		<%= f.label :seo_title, class: "form-title" %>
+		<%= f.cktext_area :seo_description %>
+	</div>
+
+	<div class="article-form-input">
+		<%= f.label :seo_title, class: "form-title" %>
+		<%= f.cktext_area :seo_keywords %>
+	</div>
+
 	<%= f.label :Upload_Photo %>
 	<%= f.file_field :photo %>
+
+	<%= f.label :enabled_?, class: "form-title" %>
+	<%= f.check_box :enabled, {}, true, false %>
 
 	<%= f.submit "Save Changes" %>
 <% end %>

@@ -488,39 +488,90 @@ a {
     width: 960px;
     margin-left: auto;
     margin-right: auto;
-    height: 600px;
+    margin-top: 60px;
+    height: 700px;
     text-align: center;
 }
 
 .explainer {
-    width: 23%;
-    height: 100%;
+    width: 45%;
+    height: 45%;
     display: inline-block;
     vertical-align: top;
     text-align: left;
     margin-left: 10px;
-    margin-bottom: 30px;
-    background-color: #2A64CF;
+    margin-bottom: 10px;
+    background-image: url(nyc_bg.jpg);
+    overflow: hidden;
+}
+
+.explainer-content {
+    position: relative;
+}
+
+.consulting {
+
+}
+
+.litigation {
+    background-position: 80% 0;
+}
+
+.MA {
+    background-position: 0 -325px;
+}
+
+.marketing {
+    background-position: 80% -325px;
 }
 
 .mini-title {
     position: relative;
     top: 20px;
+    left: -450px;
 }
 
 .mini-title span {
     color: white;
-    font-size: 30px;
+    font-size: 1.6em;
+}
+
+.icon {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    height: 200px;
+    background-image: url(SRG_Icons.png);
+    background-size: 200%;
+    background-repeat: no-repeat;
+}
+
+.consulting-icon {
+    background-position: -200px 10px;
+}
+
+.litigation-icon {
+    background-position: 0 -190px;
+}
+
+.finance-icon {
+    background-position: 0 10px;
+}
+
+.marketing-icon {
+    background-position: -200px -190px;
 }
 
 .mini-content {
     position: relative;
-    top: 40px;
+    left: -450px;
+    margin-top: -180px;
 }
 
 .mini-content p {
     color: white !important;
-    font-size: 20px;
+    font-size: 1.2em;
     line-height: 30px;
 }
 
@@ -533,6 +584,7 @@ a {
     background-image: url(BigArrow2.png);
     background-size: contain;
     background-repeat: no-repeat;
+    margin-top: -5px;
     
 }
 
@@ -546,12 +598,11 @@ a {
     margin-right: auto;
     width: 70%;
     text-align: center;
-    top: 5%;
 }
 
 .arrow-text span {
     color: white;
-    font-size: 50px;
+    font-size: 3em;
 }
 
 /*.consulting {*/
@@ -586,8 +637,9 @@ a {
 #news {
     margin-top: 0;
     width: 100%;
-    height: 400px;
     background-color: #2A64CF;
+    overflow: auto;
+    padding-bottom: 40px;
 }
 
 .news{
@@ -625,7 +677,7 @@ a {
     width: 60%;
     margin-left: auto;
     margin-right: auto;
-    height: 300px;
+    height: 350px;
     margin-top: 10px;
     background-color: white;
     padding: 20px 10px;
@@ -645,18 +697,25 @@ a {
 
 .article-pic {
     width: 100%;
+    height: 175px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     margin-left: auto;
     margin-right: auto;
+    overflow: hidden;
 }
 
-.article-pic img {
-    width: inherit;
-}
+
 
 
 .article-title{
     width: 100%;
     margin-top: 0;
+}
+
+.article-title:hover {
+    text-decoration: underline;
 }
 
 
@@ -676,6 +735,7 @@ a {
 
 .article-preview {
     width: 100%;
+    height: 80px;
     clear: both;
     text-align: left;
 }
@@ -713,12 +773,6 @@ a {
     height: 440px;
     padding: 50px 0;
     background-color: #2A64CF;
-    border-bottom: dashed thin white;
-}
-
-
-#video-news, #news .section-title {
-    border-bottom: none;
 }
 
 .video span, p {
@@ -727,7 +781,7 @@ a {
 
 #video-container {
     width: 960px;
-    height: 400px;
+    overflow: auto;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -738,7 +792,7 @@ a {
 .video {
     float: left;
     width: 25%;
-    height: 85%;
+    height: 350px;
     margin: 15px 28px;
     background-color: rgb(255, 255, 255);
     padding: 20px 10px;
@@ -751,11 +805,22 @@ a {
 .video-pic {
     width: 100%;
     height: 150px;
-    
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.video-pic img {
+    width: inherit;
 }
 
 .video-title {
     width: 100%;
+}
+
+.video-title:hover {
+    text-decoration: underline;
 }
 
 .video-title span {

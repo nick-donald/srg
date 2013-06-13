@@ -1,4 +1,5 @@
 <%= provide(:title, "Admin") %>
+<%= provide(:special_html, "class=user-html") %>
 
 <%= render 'layouts/admin_header' %>
 
@@ -6,13 +7,27 @@
 <% if signed_in? %>
 	<div class="section-title"><span>You are signed in as <%= @user.username %></span></div>
 
-	<div id="content-post">
+	<div class="content-post article-post">
 		<%= render 'shared/article_form' %>
+	</div>
+
+	<div class="content-post video-post">
+		<%= render 'shared/video_form' %>
 	</div>
 
 	<% flash.each do |key, value| %>
 		<%= content_tag(:div, value, class: "alert alert-#{key}") %>
 	<% end %>
+
+	<div id="admin-type-select">
+		<div class="admin-select-button pull-left articles-select selected-admin-input">
+			<span>Articles</span>
+		</div>
+		<div class="admin-select-button videos-select pull-right">
+			<span>Videos</span>
+		</div>
+	</div>
+<div class="admin-dashboard articles-dashboard">
 
 	<%= page_entries_info @articles %>
 	<%= will_paginate @articles %>
@@ -22,17 +37,19 @@
 			<tr>
 				<th scope="col" class="first-col">Article Title</th>
 				<th scope="col">Article Type</th>
+				<th scope="col">Enabled?</th>
 				<th scope="col">Date Posted</th>
 			</tr>
 		</thead>
 		<tbody>
 			<% @articles.each do |article| %>
 				<tr class="admin-article">
-					<td><span><%= link_to article.title, article %> |
+					<td><span><%= link_to article.title, article, class: "admin-article-title" %> |
 					<%= link_to "Edit", edit_article_path(article), class: "admin-edit" %> |
 					<%= link_to "Delete", article, class: "admin-edit", method: :delete,
 									  data: { confirm: "You sure?" } %></span></td>
 					<td><span><%= article.article_type %></span></td>
+					<td><span><%= article.enabled %></span></td>
 					<td><span><%= article.created_at.strftime("%m/%d/%y") %></span></td>
 				</tr>
 			<% end %>
@@ -40,6 +57,37 @@
 	</table>
 
 	<%= will_paginate @articles %>
+</div>
+
+<div class="admin-dashboard videos-dashboard">
+
+	<%= page_entries_info @videos %>
+	<%= will_paginate @videos %>
+
+<table class="admin-table">
+		<thead>
+			<tr>
+				<th scope="col" class="first-col">Video Title</th>
+				<th scope="col">Enabled?</th>
+				<th scope="col">Date Posted</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @videos.each do |video| %>
+				<tr class="admin-article">
+					<td><span><%= link_to video.title, video, class: "admin-article-title" %> |
+					<%= link_to "Edit", edit_video_path(video), class: "admin-edit" %> |
+					<%= link_to "Delete", video, class: "admin-edit", method: :delete,
+									  data: { confirm: "You sure?" } %></span></td>
+					<td><span><%= video.enabled %></span></td>
+					<td><span><%= video.created_at.strftime("%m/%d/%y") %></span></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+
+	<%= will_paginate @videos %>
+</div>
 
 
 <% else %>

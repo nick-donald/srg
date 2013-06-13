@@ -1,0 +1,35 @@
+<div class="article-index-container">
+	<div class="article-search-container">
+		<div class="search-title"><span>Article search</span></div>
+		<div class="article-search-box">
+			<%= form_tag videos_path, :method => :get do %>
+				<span><%= label_tag :keywords %>: </span>
+				<%= text_field_tag :search, params[:search] %>
+				<%= submit_tag "Search", name: nil %>
+			<% end %>
+		</div>
+	</div>
+
+	<div class="page-info">
+		<span><%= page_entries_info @videos %></span>
+	</div>
+	<%= will_paginate @videos %>
+
+	<ul class="article-index">
+
+	<% @videos.each do |video| %>
+		<li>
+			<div class="article-container">
+				<div class="article-photo">
+					<a href="/videos/<%= video.id %>"><%= image_tag(video.photo.url, height: 100) %></a>
+				</div>
+				<span class="article-title"><%= link_to video.title, video %></span> <br />
+				<span><%= link_to video.publication, video.publication_link, class: 'admin-edit' %> </span> <br />
+				<span><%= video.date.strftime("%b %d, %Y") %></span> <br />
+				<div class="article-short-description"><span><%= truncate(video.description, length: 100, separator: " ") %></span></div>
+			</div>
+		</li>
+	<% end %>
+
+	</ul>
+</div>

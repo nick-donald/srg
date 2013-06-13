@@ -1,0 +1,21 @@
+<%= provide(:title, @video.title) %>
+
+<div class="total-article-container">
+	<div class="wrapper">
+
+		<div class="article-detail-container">
+			<div class="article-detail-title">
+				<span><%= sanitize @video.title %></span>
+			</div>
+			<div class="article-detail-author">
+				<span> As seen on <%= link_to @video.publication, @video.publication_link, class: "article-external-link" %></span>
+				<br />
+				<span><%= @video.date.strftime("%B %d, %Y") %></span>
+			</div>
+			<div class="article-detail-content">
+				<%= raw @video.embed_link %> <br />
+				<span><%= @video.description %></span>
+			</div>
+		</div>
+	</div>
+</div>

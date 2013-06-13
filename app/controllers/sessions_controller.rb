@@ -1,6 +1,5 @@
 class SessionsController < ApplicationController
 	def new
-
 		user = User.find_by_remember_token(cookies[:remember_token])
 		if signed_in?
 			redirect_to user

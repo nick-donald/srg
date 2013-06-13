@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130607212413) do
+ActiveRecord::Schema.define(:version => 20130612163503) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -29,9 +29,18 @@ ActiveRecord::Schema.define(:version => 20130607212413) do
     t.string   "publication_name"
     t.string   "publication_link"
     t.string   "article_type"
+    t.boolean  "enabled"
+    t.string   "seo_title"
+    t.string   "seo_description"
+    t.string   "seo_keywords"
   end
 
   add_index "articles", ["user_id", "created_at"], :name => "index_articles_on_user_id_and_created_at"
+
+  create_table "searches", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name"
@@ -45,5 +54,25 @@ ActiveRecord::Schema.define(:version => 20130607212413) do
 
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
   add_index "users", ["username"], :name => "index_users_on_username", :unique => true
+
+  create_table "videos", :force => true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.string   "embed_link"
+    t.string   "publication"
+    t.string   "publication_link"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.integer  "user_id"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.datetime "date"
+    t.boolean  "enabled"
+    t.string   "seo_title"
+    t.string   "seo_description"
+    t.string   "seo_keywords"
+  end
 
 end

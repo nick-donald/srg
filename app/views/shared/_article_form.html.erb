@@ -1,33 +1,71 @@
-<div id="new-article-form">
 <%= form_for(@article, :html => { :multipart => true }) do |f| %>
 
-	<%= f.label :Article_Type %>
-	<%= f.radio_button(:article_type, "SRG News") %> SRG News <br />
-	<%= f.radio_button(:article_type, "Industry News") %> Industry News
+	<div class="article-type">
+		<%= f.label :Article_Type, class: "form-title" %> <br />
+		<%= f.radio_button(:article_type, "SRG News") %> SRG News <br />
+		<%= f.radio_button(:article_type, "Industry News") %> Industry News
+	</div>
 
-	<%= f.label :title %>
-	<%= f.text_field :title, maxlength: 70 %>
+	<div class="article-form-input">
+		<%= f.label :title, class: "form-title" %>
+		<%= f.text_field :title, maxlength: 80, autocomplete: false %>
+	</div>
 
-	<%= f.label :author %>
-	<%= f.text_field :author %>
+	<div class="article-form-input">
+		<%= f.label :author, class: "form-title" %>
+		<%= f.text_field :author %>
+	</div>
 
-	<%= f.label :date %>
-	<%= f.date_select :date %>
+	<div class="article-form-input">
+		<%= f.label :publication_date, class: "form-title" %> <br />
+		<%= f.date_select :date %>
+	</div>
 
-	<%= f.label :short_description %>
-	<%= f.text_field :short_description %>
+	<br />
 
-	<%= f.label :Publication_Name %>
-	<%= f.text_field :publication_name %>
+	<div class="article-form-input">
+		<%= f.label :short_description, class: "form-title" %>
+		<%= f.text_field :short_description, class: "wide-form" %>
+	</div>
 
-	<%= f.label :Publication_Link %>
-	<%= f.text_field :publication_link %>
+	<div class="article-form-input">
+		<%= f.label :Publication_Name, class: "form-title" %>
+		<%= f.text_field :publication_name %>
+	</div>
 
-	<%= f.label :content %>
-	<%= f.cktext_area :content, :ckeditor => {:language => "usa"} %>
+	<div class="article-form-input">
+		<%= f.label :Publication_Link, class: "form-title" %>
+		<%= f.text_field :publication_link %>
+	</div>
 
-	<%= f.file_field :photo %>
+	<div class="article-form-input">
+		<%= f.label :content, class: "form-title" %>
+		<%= f.cktext_area :content, :ckeditor => {:language => "usa"} %>
+	</div>
 
-	<%= f.submit "Post" %>
+	<div class="article-form-input">
+		<%= f.label :SEO_title, class: "form-title" %>
+		<%= f.text_field :seo_title %>
+	</div>
+
+	<div class="article-form-input">
+		<%= f.label :seo_description, class: "form-title" %>
+		<%= f.text_field :seo_description, class: "wide-form" %>
+	</div>
+
+	<div class="article-form-input">
+		<%= f.label :seo_keywords, class: "form-title" %>
+		<%= f.text_field :seo_keywords,  class: "wide-form" %>
+	</div>
+	<div class="article-form-input">
+		<%= f.label :photo_upload, class: "form-title" %>
+		<%= f.file_field :photo %>
+		<span>jpg, gif, or png only</span>
+	</div>
+
+	<%= f.label :enabled_?, class: "form-title" %>
+	<%= f.check_box :enabled, {}, true, false %>
+
+
+	<%= f.submit "Post", class: "btn" %>
 <% end %>
-</div>

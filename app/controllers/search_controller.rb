@@ -1,16 +1,19 @@
 class SearchController < ApplicationController
 
 	def show
-		@search = search(params)
+		@search = search(params[:search])
+		@results = @search.results
+	end
+
+	def index
+		@search = Sunspot.search(params[:search])
+		@results = @search.results
 	end
 
 	protected
-		def search(options)
-
-		Sunspot.search(Article) do
-		 keywords options[:query]
-		 order_by :created_at, :desc
-		 paginate :page => options[:page]
+		def search(query)
+			Sunspot.search Article, Video do
+				fulltext query
+			end
 		end
-	end
 end

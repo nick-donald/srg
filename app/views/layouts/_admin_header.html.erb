@@ -6,7 +6,8 @@
 		<div class="pull-right">
 			<% if signed_in? %>
 				<ul class="admin-signout">
-					<li><%= link_to "New Article", "#", class: "admin-new-article" %></li>
+					<li><%= link_to "New Article", "#", class: "admin-new-article new-article" %></li>
+					<li><%= link_to "New Video", "#", class: "admin-new-article new-video" %></li>
 					<li><%= link_to "Sign Out", signout_path, method: "delete" %></li>
 				</ul>
 			<% end %>

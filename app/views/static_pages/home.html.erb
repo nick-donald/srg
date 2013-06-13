@@ -1,4 +1,25 @@
 <% provide(:title, 'Retail Consultants') %>
+<style>
+    .vid-pic {
+        background-image: url(<%= @video.photo.url %>);
+    }
+
+    .vid-pic1 {
+        background-image: url(<%= @video_1.photo.url %>);
+    }
+
+    .vid-pic2 {
+        background-image: url(<%= @video_2.photo.url %>);
+    }
+
+    .srg-pic {
+        background-image: url(<%= @first_srg_article.photo.url %>);
+    }
+
+    .industry-pic {
+        background-image: url(<%= @first_article.photo.url %>);
+    }
+</style>
 
     <div class="page">
         <div id="slideshow-container">
@@ -47,17 +68,19 @@
         <div class="h1">
             <div class="inner-container">
                 <h1>SRG has 3 decades of experience in retail and consumer goods</h1>
-                <div class="arrow">
+                <!-- <div class="arrow">
                     
-                </div>
+                </div> -->
             </div>
         </div>
         <div id="content">
             <div class="explain-box">
                 <div class="explainer consulting">
-                    <div class="container">
+                    <div class="container explainer-content">
                         <div class=mini-title>
                             <span>Retail Consulting</span>
+                        </div>
+                        <div class="icon consulting-icon">
                         </div>
                         <div class="mini-content">
                             <p>We work directly with the top national retail chains consumer packaged goods suppliers. SRG helps these retailers and manufacturers understand the changes occurring across the industry to identify new opportunities to increase sales and consumption.</p>
@@ -65,17 +88,23 @@
                     </div>
                 </div>
                 <div class="explainer litigation">
-                    <div class="container">
-                        <div class=mini-title>
+                    <div class="container explainer-content">
+                        <div class="mini-title">
                             <span>Retail Litigation</span>
                         </div>
-                        
+                        <div class="icon litigation-icon">
+                        </div>
+                        <div class="mini-content">
+                            <p>SRG is known for its high quality expertise in litigation consulting for many of the nation’s top law firms and corporate legal departments. We offer placement of trial consultants experienced in providing comprehensive litigation support &ndash; from discovery to final resolution at trial.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="explainer MA">
-                    <div class="container">
-                        <div class=mini-title>
-                            <span>Mergers & Acquisitions</span>
+                    <div class="container explainer-content">
+                        <div class="mini-title">
+                            <span>Financial Services</span>
+                        </div>
+                        <div class="icon finance-icon">
                         </div>
                         <div class="mini-content">
                             <p>Our in-depth expertise has been used by leading firms to support mergers and acquisitions, as well as for M&A approval from the Federal Trade Commission (FTC), who has relied on our expertise to provide insight into competitive practices across the retailing, distribution, and consumer brands industries.</p>
@@ -83,9 +112,14 @@
                     </div>
                 </div>
                 <div class="explainer marketing">
-                    <div class="container">
+                    <div class="container explainer-content">
                         <div class=mini-title>
-                            <span>Digital Marketing</span>
+                            <span>Marketing and Advertising</span>
+                        </div>
+                        <div class="icon marketing-icon">
+                        </div>
+                        <div class="mini-content">
+                            <p>Strategic Resource Group offers a wide range of advertising and marketing related consulting services to both retailers and advertising firms. SRG has previously worked with top advertising firms to help them gain an advantage during pitch season and win new clients.</p>
                         </div>
                     </div>
                 </div>
@@ -105,37 +139,37 @@
             </div>
             <div id="video-container">
                 <div class="video">
-                    <div class="video-pic">
+                    <div class="video-pic vid-pic">
                         
                     </div>
                     <div class="video-title">
-                        <span>Burt Flickinger on Retail Sales</span>
+                        <a href="videos/<%= @video.id %>"><span><%= @video.title %></span></a>
                     </div>
                     <div class="video-description">
-                        <span>Jan 16 (CCTV) -- Burt Flickinger, Managing Director of Strategic Resource Group, explains why retailers much better than expected and how the new payroll tax hike will impact the spending.</span>
+                        <span><%= @video.date.strftime("%b %d") %> (<%= @video.publication %>) -- <%= truncate(@video.description, length: 170, seperator: " ") %></span>
                     </div>
                     
                 </div>
                 <div id="middle-video" class="video">
-                    <div class="video-pic">
+                    <div class="video-pic vid-pic1">
                         
                     </div>
                     <div class="video-title">
-                        <span>Early Signs of Strong Holiday Sales for Retailers?</span>
+                        <a href="videos/<%= @video_1.id %>"><span><%= @video_1.title %></span></a>
                     </div>
                     <div class="video-description">
-                        <span>Nov 27 (Fox Business) -- Retail analysts Faith Hope Consolo and Burt Flickinger on the outlook for retail sales during the holiday season and through 2013.</span>
+                        <span><%= @video_1.date.strftime("%b %d") %> (<%= @video_1.publication %>) -- <%= truncate(@video_1.description, length: 170, seperator: " ") %></span>
                     </div>
                 </div>
                 <div class="video">
-                    <div class="video-pic">
+                    <div class="video-pic vid-pic2">
                         
                     </div>
                     <div class="video-title">
-                        <span>Wal-Mart's Early &quot;Black Friday&quot;</span>
+                        <a href="videos/<%= @video_2.id %>"><span><%= @video_2.title %></span></a>
                     </div>
                     <div class="video-description">
-                        <span>Nov 8 (CNBC) -- Burt Flickinger, Strategic Resource Group, discusses the ripple effects of Wal-Mart's early &quot;Black Friday.&quot;</span>
+                        <span><%= @video_2.date.strftime("%b %d") %> (<%= @video_2.publication %>) -- <%= truncate(@video_2.description, length: 170, seperator: " ") %></span>
                     </div>
                 </div>  
             </div>
@@ -147,16 +181,15 @@
                     <span>SRG News</span>
                 </div>
                 <div class="article">
-                    <div class="article-pic">
-                        <img src="<%= @first_article.photo.url %>">
+                    <div class="article-pic srg-pic">
                     </div>
                     <div class="article-content">
                         <div class="article-title">
-                            <a href="articles/<%= @first_article.id %>"><span><%= @first_article.title %></span></a>
+                            <a href="articles/<%= @first_srg_article.id%>"><span><%= @first_srg_article.title %></span></a>
                         </div>
                     </div>
                     <div class="article-preview">
-                            <span><%= @first_article.short_description %></span>
+                            <span><%= truncate(@first_srg_article.short_description, length: 110, separator: " ") %></span>
                     </div>
                 </div>
             </div>
@@ -165,16 +198,15 @@
                     <span>Retail Industry News</span>
                 </div>
                 <div class="article">
-                    <div class="article-pic">
-                        <img src="<%= @first_srg_article.photo.url %>">
+                    <div class="article-pic industry-pic">
                     </div>
                     <div class="article-content">
                         <div class="article-title">
-                            <a href="articles/<%= @first_srg_article.id%>"><span><%= @first_srg_article.title %></span></a>
+                            <a href="articles/<%= @first_article.id %>"><span><%= @first_article.title %></span></a>
                         </div>
                     </div>
                     <div class="article-preview">
-                        <span><%= @first_srg_article.short_description %></span>
+                        <span><%= truncate(@first_article.short_description, length: 110, separator: " ") %></span>
                     </div>
                 </div>
             </div>

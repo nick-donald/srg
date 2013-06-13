@@ -2,6 +2,8 @@ SRG::Application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :articles
+  resources :videos
+  resources :search
 
   get "static_pages/home"
 

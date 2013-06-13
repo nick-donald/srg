@@ -1,14 +1,38 @@
-<%= form_tag articles_path, :method => :get do %>
-	<%= text_field_tag :search, params[:search] %>
-	<%= submit_tag "Search", name: nil %>
-<% end %>
+<div class="article-index-container">
+	<div class="article-search-container">
+		<div class="search-title"><span>Article search</span></div>
+		<div class="article-search-box">
+			<%= form_tag articles_path, :method => :get do %>
+				<span><%= label_tag :keywords %></span>
+				<%= text_field_tag :search, params[:search] %>
+				<%= submit_tag "Search", name: nil %>
+			<% end %>
+		</div>
+	</div>
 
+	<div class="page-info">
+		<span><%= page_entries_info @articles %></span>
+	</div>
+	<%= will_paginate @articles %>
 
-<%= page_entries_info @articles %>
-<%= will_paginate @articles %>
+	<ul class="article-index">
 
-<% @articles.each do |article| %>
-	<li>
-		<%= link_to article.title, article %>
-	</li>
-<% end %>
+	<% @articles.each do |article| %>
+
+		<% if article.class.name == "Article" %>
+			<li>
+				<div class="article-container">
+					<div class="article-photo">
+						<a href="/articles/<%= article.id %>"><%= image_tag(article.photo.url, height: 100) %></a>
+					</div>
+					<span class="article-title"><%= link_to article.title, article %></span> <br />
+					<span>By <%= article.author %>, <%= link_to article.publication_name, article.publication_link, class: 'admin-edit' %> </span> <br />
+					<span><%= article.date.strftime("%b %d, %Y") %></span> <br />
+					<div class="article-short-description"><span><%= truncate(article.short_description, length: 100, separator: " ") %></span></div>
+				</div>
+			</li>
+		<% end %>
+	<% end %>
+
+	</ul>
+</div>

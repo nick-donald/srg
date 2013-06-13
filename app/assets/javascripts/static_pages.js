@@ -30,7 +30,7 @@ $(document).ready(function(){
         }
 
         if ( $window.scrollTop() < height ) {
-            $('.bios-side-nav').css({ position: 'fixed' }).css({ top: 'auto' });
+            $('.bios-side-nav').css({ position: 'fixed' }).css({ top: 128 });
         }
         
     });
@@ -83,27 +83,6 @@ $(document).ready(function(){
         }
         
         else {
-        
-        $('.photo-title span').hide( 'slide', { duration: 200, complete:
-                                    function () {
-                                        switch (index) {
-                                            
-                                            case 0:
-                                                $(this).html('Retail Consulting').delay(200).show('slide', { duration: 300, direction: 'right' });
-                                                break;
-                                            case 1:
-                                                $(this).html('Industry Insights').delay(200).show('slide', { duration: 300, direction: 'right' });
-                                                break;
-                                            case 2:
-                                                $(this).html('Retail Litigation').delay(200).show('slide', { duration: 300, direction: 'right' });
-                                                break;
-                                            case 3:
-                                                $(this).html('Digital Marketing').delay(200).show('slide', { duration: 300, direction: 'right' });
-                                                break;
-                                        }
-                                    }
-                                    
-                                    });
         $('.showing').animate({ left: -1500 }, { duration: 700, easing: 'easeOutQuad', complete:
                               function () {
                                 $(this).toggleClass('showing').css({ left: 1500 });
@@ -158,34 +137,10 @@ $(document).ready(function(){
                           c++;
                           
                           if (c < 4) {
-                            
-                          
                           
                             $('.slideshow-buttons:eq(' + c + ')').addClass('selected')
                                                                  .siblings().removeClass('selected');
                             $(this).siblings().removeClass('selected');
-                            
-                            
-                            $('.photo-title span').hide( 'slide', { duration: 200, complete:
-                                    function () {
-                                        switch (c) {
-                                            
-                                            case 0:
-                                                $(this).html('Retail Consulting').delay(200).show('slide', { duration: 300, direction: 'right' });
-                                                break;
-                                            case 1:
-                                                $(this).html('Industry Insights').delay(200).show('slide', { duration: 300, direction: 'right' });
-                                                break;
-                                            case 2:
-                                                $(this).html('Retail Litigation').delay(200).show('slide', { duration: 300, direction: 'right' });
-                                                break;
-                                            case 3:
-                                                
-                                                break;
-                                        }
-                                    }
-                                    
-                                    });
                           
                           $('.showing').animate({ left: -1500 }, { duration: 700, easing: 'easeOutQuad', complete:
                               function () {
@@ -225,6 +180,14 @@ $(document).ready(function(){
         $('.retail-litigation').find('.nav-span-title').text('Litigation');
     }
     
+
+    $('.explainer').hover(function(){
+        $(this).find('.explainer-content').animate({left: 450 });
+    }, 
+        function(){
+            $(this).find('.explainer-content').animate({left: 0 });
+        }
+    );
     
     
     
@@ -241,13 +204,6 @@ $(document).ready(function(){
             //$(this).siblings('.explainer').css({ opacity: 1 });
         }
     );
-    
-    
-    $('.pull-left .article-pic').css('background', 'url("burt1.png") no-repeat').css('background-size', 'cover');
-    $('.pull-right .article-pic').css('background', 'url("burt2.png") no-repeat').css('background-size', 'cover');
-    $('#video-container div:nth-child(1) .video-pic').css('background', 'url("video1.png") no-repeat').css('background-size', 'cover');
-    $('#video-container div:nth-child(2) .video-pic').css('background', 'url("video2.png") no-repeat').css('background-size', 'cover');
-    $('#video-container div:nth-child(3) .video-pic').css('background', 'url("video3.png") no-repeat').css('background-size', 'cover');
 
     $('#menu').click(function(){
         $('#mobile-dropdown').toggle('slide', { direction: 'up', easing: 'easeInOutExpo'});
@@ -273,11 +229,42 @@ $(document).ready(function(){
         var pos = $( '.' + name ).position();
         var posTop = pos.top;
 
-        $('body,html').animate({ scrollTop:  ( posTop + 60 ) });        
+        $('body,html').animate({ scrollTop:  ( posTop + 60 ) }, { duration: 1000, easing: 'easeOutQuad' });        
     });
 
-    $('.admin-new-article').click(function(){
-        $('#content-post').toggle({direction: 'up'});
+    $('.new-article').click(function(){
+        $('.article-post').toggle();
     });
+
+    $('.new-video').click(function() {
+        $('.video-post').toggle();
+    });
+
+    $('.articles-select').click(function(){
+        if ($(this).hasClass('selected-admin-input')) {
+            return;
+        }
+
+        else {
+            $(this).toggleClass('selected-admin-input');
+            $('.videos-select').toggleClass('selected-admin-input');
+            $('.articles-dashboard').toggle();
+            $('.videos-dashboard').toggle();
+        }
+    });
+
+    $('.videos-select').click(function(){
+        if ($(this).hasClass('selected-admin-input')) {
+            return;
+        }
+
+        else {
+            $(this).toggleClass('selected-admin-input');
+            $('.articles-select').toggleClass('selected-admin-input');
+            $('.videos-dashboard').toggle();
+            $('.articles-dashboard').toggle();
+        }
+    });
+
 
 });

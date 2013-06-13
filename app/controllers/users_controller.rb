@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	before_filter :signed_in_user, only: [:index, :edit, :update, :destroy]
+	before_filter :signed_in_user, only: [:index, :edit, :update, :destroy, :new]
 	before_filter :correct_user, only: [:edit, :update]
 	before_filter :admin_user, only: :destroy
 	
@@ -10,7 +10,8 @@ class UsersController < ApplicationController
 		@articles = Article.paginate(page: params[:page],  per_page: 10)
   		@feed_items = current_user.feed
 
-		# render layout: false
+  		@video = current_user.videos.build if signed_in?
+  		@videos = Video.paginate(page: params[:page],  per_page: 10)
 	end
 
 	def new

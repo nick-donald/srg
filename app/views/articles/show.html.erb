@@ -1,12 +1,16 @@
+<%= provide(:title, @article.title) %>
+<%= provide(:meta_description, @article.seo_description) %>
+<%= provide(:meta_keywords, @article.seo_keywords) %>
+
 <div class="total-article-container">
 	<div class="wrapper">
 
 		<div class="article-detail-container">
 			<div class="article-detail-title">
-				<span><%= @article.title %></span>
+				<span><%= sanitize @article.title %></span>
 			</div>
 			<div class="article-detail-author">
-				<span>By <%= @article.author %>, <%= link_to @article.publication_name, @article.publication_link, class: "article-external-link" %></span>
+				<span>By <%= @article.author %>, <%= link_to @article.publication_name, @article.publication_link %></span>
 				<br />
 				<span><%= @article.date.strftime("%B %d, %Y") %></span>
 			</div>
@@ -15,5 +19,8 @@
 				<p><%= sanitize @article.content %></p>
 			</div>
 		</div>
+	</div>
+	<div class="article-return">
+		<a href="/articles"><span> << Return to articles</span></a>
 	</div>
 </div>

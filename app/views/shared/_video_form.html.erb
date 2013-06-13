@@ -1,0 +1,42 @@
+<%= form_for(@video) do |f| %>
+	<%= f.label :title, class: "form-title" %>
+	<%= f.text_field :title, maxlength: 80, autocomplete: false %>
+
+	<%= f.label :description, class: "form-title" %>
+	<%= f.text_field :description %>
+
+	<%= f.label :embed_link, class: "form-title" %>
+	<%= f.text_field :embed_link %>
+
+	<%= f.label :publication, class: "form-title" %>
+	<%= f.text_field :publication %>
+
+	<%= f.label :publication_link, class: "form-title" %>
+	<%= f.text_field :publication_link %>
+
+	<%= f.label :publication_date, class: "form-title" %>
+	<%= f.date_select :date %>
+
+	<div class="article-form-input">
+		<%= f.label :seo_title, class: "form-title" %>
+		<%= f.text_field :seo_title %>
+	</div>
+
+	<div class="article-form-input">
+		<%= f.label :seo_description, class: "form-title" %>
+		<%= f.text_field :seo_description %>
+	</div>
+
+	<div class="article-form-input">
+		<%= f.label :seo_keywords, class: "form-title" %>
+		<%= f.text_field :seo_keywords %>
+	</div>
+
+	<%= f.file_field :photo %>
+
+	<%= f.label :enabled_?, class: "form-title" %>
+	<%= f.check_box :enabled, {}, true, false %>
+
+	<%= f.submit "Post" %>
+
+<% end %>

@@ -88,6 +88,31 @@
 
     <!-- A specialized field for geospatial search. If indexed, this fieldType must not be multivalued. -->
     <fieldType name="location" class="solr.LatLonType" subFieldSuffix="_coordinate"/>
+
+    <!-- Sunspot Autocomplete -->
+    <fieldType name="autocomplete" class="solr.TextField" positionIncrementGap="100">
+      <analyzer type="index">
+        <tokenizer class="solr.KeywordTokenizerFactory"/>
+        <filter class="solr.LowerCaseFilterFactory"/>
+        <filter class="solr.EdgeNGramFilterFactory" minGramSize="1" maxGramSize="25" />
+      </analyzer>
+      <analyzer type="query">
+        <tokenizer class="solr.KeywordTokenizerFactory"/>
+        <filter class="solr.LowerCaseFilterFactory"/>
+      </analyzer>
+    </fieldType>
+    <fieldType name="autosuggest" class="solr.TextField" positionIncrementGap="100">
+      <analyzer type="index">
+        <tokenizer class="solr.LetterTokenizerFactory"/>
+        <filter class="solr.LowerCaseFilterFactory"/>
+        <filter class="solr.EdgeNGramFilterFactory" minGramSize="1" maxGramSize="25" />
+      </analyzer>
+      <analyzer type="query">
+        <tokenizer class="solr.LetterTokenizerFactory"/>
+        <filter class="solr.LowerCaseFilterFactory"/>
+      </analyzer>
+    </fieldType>
+    <!-- End Sunspot Autocomplete -->
   </types>
   <fields>
     <!-- Valid attributes for fields:
@@ -236,6 +261,12 @@
     <dynamicField name="*_llm" stored="false" type="location" multiValued="true" indexed="true"/>
     <dynamicField name="*_lls" stored="true" type="location" multiValued="false" indexed="true"/>
     <dynamicField name="*_llms" stored="true" type="location" multiValued="true" indexed="true"/>
+
+    <!-- Sunspot Autocomplete -->
+    <dynamicField name="*_ac" type="autocomplete" indexed="true"  stored="true"/>
+    <dynamicField name="*_as" type="autosuggest" indexed="true"  stored="true"/>
+    <!-- End Sunspot Autocomplete -->
+
   </fields>
   <!-- Field to use to determine and enforce document uniqueness.
       Unless this field is marked with required="false", it will be a required field

@@ -1,12 +1,11 @@
 class ArticlesController < ApplicationController
-	before_filter :signed_in_user, only: [:create, :destroy]
+	before_filter :signed_in_user, only: [:create, :destroy, :edit]
 
 	def index
-		# @articles = Article.paginate(page: params[:page],  per_page: 3)
-
-		@search = Article.search do
+		@search = Sunspot.search Article do
     		fulltext params[:search]
-    		paginate :page => params[:page], :per_page => 10
+    		paginate page: params[:page], per_page: 10
+    		order_by(:created_at, :desc )
     	end
 
     	@articles = @search.results

@@ -2,6 +2,7 @@
 	width: 100%;
 	border-top: solid thin;
 	margin-bottom: 50px;
+	overflow: auto;
 }
 
 .article-detail-container {
@@ -22,10 +23,86 @@
 	margin-bottom: 10px;
 }
 
-.article-external-link {
+.article-detail-container a {
 	text-decoration: underline;
 	color: blue;
 }
+
+.article-return {
+	width: 340px;
+	height: 100px;
+	border-top: solid;
+	float: right;
+	font-size: 2em;
+	text-indent: 50px;
+	-webkit-transition: border-top-color 0.3s;
+	-moz-transition: 	border-top-color 0.3s;
+	transition: 		border-top-color 0.3s;
+}
+
+.article-return:hover {
+	border-top-color: #204b9a;
+}
+
+/*Articles index*/
+
+.article-index-container {
+	width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.article-search-container {
+	width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 70px;
+}
+
+.search-title {
+	border-bottom: solid thin;
+}
+
+.article-search-box {
+	width: 100%;
+	
+}
+
+.article-search-box input {
+	display: inline;
+}
+
+.article-index {
+	list-style: none;
+}
+
+.article-container {
+	width: 100%;
+	height: 100px;
+	border-left: solid;
+	margin-bottom: 20px;
+	padding: 5px;
+}
+
+.article-photo {
+	float: left;
+	width: 150px;
+	height: 100px;
+	overflow: hidden;
+	text-align: center;
+}
+
+.article-photo img { 
+}
+
+.article-container span {
+	margin-left: 10px;
+}
+
+.article-title {
+	font-size: 1.4em;
+}
+
 
 /*pagination*/
 
@@ -33,16 +110,35 @@
 	margin: 10px;
 }
 
-.pagination > span, a {
+.pagination a {
+	font-family: 'Titillium Web', sans-serif;
+	border: solid thin;
+	padding: 5px;
+	color: #204b9a;
 }
 
-.pagination a,span {
+.pagination span {
 	font-family: 'Titillium Web', sans-serif;
+	border: solid thin;
+	padding: 5px;
+	color: #204b9a;
 }
 
 .current {
 	font-family: 'Titillium Web', sans-serif;
 	font-style: normal;
+	border: solid thin;
+	padding: 5px;
+	font-size: 1.3em;
+	color: #204b9a;
 }
 
-.previous-page
+span.disabled {
+	color: #777777;
+}
+
+.page-info {
+	width: 300px;
+	padding: 10px;
+	border: solid thin #204b9a;
+}
