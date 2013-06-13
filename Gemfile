@@ -7,7 +7,6 @@ gem 'will_paginate', '3.0.3'
 gem 'paperclip', '~> 3.0'
 gem 'ckeditor'
 gem 'sunspot_rails'
-gem "sunspot_autocomplete", ">= 0.0.3", :git => "git@github.com:xponrails/sunspot_autocomplete.git"
 
 
 # Bundle edge Rails instead:
