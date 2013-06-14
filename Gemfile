@@ -7,6 +7,7 @@ gem 'will_paginate', '3.0.3'
 gem 'paperclip', '~> 3.0'
 gem 'ckeditor'
 gem 'sunspot_rails'
+gem 'tanker'
 
 
 # Bundle edge Rails instead:
