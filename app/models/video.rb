@@ -1,5 +1,5 @@
 class Video < ActiveRecord::Base
-  attr_accessible :title, :description, :embed_link, :publication, :publication_link, :photo, :date, :enabled
+  attr_accessible :title, :description, :embed_link, :publication, :publication_link, :photo, :date, :enabled, :seo_title, :seo_description, :seo_keywords
 
   validates :user_id, presence: true
 

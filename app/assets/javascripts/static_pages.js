@@ -6,7 +6,6 @@ $(document).ready(function(){
 
     $window.scroll(function(){
 
-        //var height = $('.bios-side-nav').height();
 
         var navPos = $('bios-side-nav').position();
 
@@ -35,42 +34,15 @@ $(document).ready(function(){
         
     });
     
-    //$('.subnav').hide();
     
     $('ul.mainnav li').mouseenter(function(){
-        var x = $(this).offset().left;
-        var winSize = $(window).width();
-        var valEdges = (winSize - 1000) / 2;
-        var valInsideEdge = x - valEdges;
-        //$(this).find('div.subnav-div').css('left', -valInsideEdge);
         $(this).find('div.subnav-div').show();
-        
     });
     
     $('ul.mainnav li').mouseleave(function(){
         $(this).find('.subnav-div').hide();
     })
     
-    //$("ul.mainnav li").mouseover(function() { //When trigger is clicked...
-    //
-    //    //Following events are applied to the subnav itself (moving subnav up and down)
-    //    $(this).parent().find("ul.subnav").slideDown('fast').show(); //Drop down the subnav on click
-    //    
-    //    $(this).parent().hover(function() {
-    //    }, function(){
-    //            $(this).parent().find("ul.subnav").slideUp('slow'); //When the mouse hovers out of the subnav, move it back up
-    //    });
-    //    
-    //    //Following events are applied to the trigger (Hover events for the trigger)
-    //    }).hover(function() {
-    //            $(this).addClass("subhover"); //On hover over, add class "subhover"
-    //    }, function(){	//On Hover Out
-    //            $(this).removeClass("subhover"); //On hover out, remove class "subhover"
-    //            });
-    //
-    //
-    
-    //slideshow
     
     $('.slideshow-buttons').click(function() {
         $(this).addClass('selected');
@@ -92,43 +64,6 @@ $(document).ready(function(){
         }
     });
     
-    var slideshow = function(){
-    $('.photo-title .container').show('slide', {duration: 900, direction: 'right'});
-    $('.photo-title .container').delay(3500).hide('slide', 900, function(){
-            $('#image1').fadeToggle('slow', function(){
-                    $('.photo-title').find('.container').html('<span>Industry Insights</span>');
-                    $('.photo-title').find('.container').show('slide', {duration: 900, direction: 'right'}, function(){
-                             $('.photo-title').find('.container').delay(3500).hide('slide', 900, function(){
-                                    $('#image1').attr('src', 'banner3.jpg');
-                                    $('.photo-title').find('.container').html('<span>Retail Litigation</span>');
-                                    $('#image1').fadeToggle('slow', function(){
-                                            $('.photo-title').find('.container').show('slide', {duration: 900, direction: 'right'}, function(){
-                                                $('.photo-title').find('.container').delay(3500).hide('slide', 900, function(){
-                                                    $('#image-container').css('background-image', 'url("banner4.jpg")');
-                                                    $('.photo-title').find('.container').html('<span>Digital Marketing</span>');
-                                                    $('#image1').fadeToggle('slow', function(){
-                                                            $('.photo-title').find('.container').show('slide', {duration: 900, direction: 'right'}, function(){
-                                                                    $('.photo-title').find('.container').delay(3500).hide('slide', 900, function(){
-                                                                        $('#image1').attr('src', 'new_banner1.jpg');
-                                                                        $('.photo-title').find('.container').html('<span>Retail Consulting</span>');
-                                                                        $('#image1').fadeToggle('slow', function(){
-                                                                                $('#image-container').css('background-image', 'url("banner2.jpg")');
-                                                                                slideshow();
-                                                                            });
-                                                                    });
-                                                                });
-                                                        });
-                                                });
-                                            });
-                                        });
-                                });
-                        });
-                });
-        });
-    };
-    
-    //slideshow();
-    
     var c = 0;
     function slideshow2() {
         
@@ -137,10 +72,34 @@ $(document).ready(function(){
                           c++;
                           
                           if (c < 4) {
+                            
+                          
                           
                             $('.slideshow-buttons:eq(' + c + ')').addClass('selected')
                                                                  .siblings().removeClass('selected');
                             $(this).siblings().removeClass('selected');
+                            
+                            
+                            $('.photo-title span').hide( 'slide', { duration: 200, complete:
+                                    function () {
+                                        switch (c) {
+                                            
+                                            case 0:
+                                                $(this).html('Retail Consulting').delay(200).show('slide', { duration: 300, direction: 'right' });
+                                                break;
+                                            case 1:
+                                                $(this).html('Industry Insights').delay(200).show('slide', { duration: 300, direction: 'right' });
+                                                break;
+                                            case 2:
+                                                $(this).html('Retail Litigation').delay(200).show('slide', { duration: 300, direction: 'right' });
+                                                break;
+                                            case 3:
+                                                
+                                                break;
+                                        }
+                                    }
+                                    
+                                    });
                           
                           $('.showing').animate({ left: -1500 }, { duration: 700, easing: 'easeOutQuad', complete:
                               function () {
@@ -189,21 +148,7 @@ $(document).ready(function(){
         }
     );
     
-    
-    
-    $('.explainer').hover(function(){
-        //$(this).siblings('.explainer').css({ opacity: 0.6 });
-        
-        var pos = $(this).position();
-        var xPos = pos.left;
-        var arrowPos = xPos + $(this).width() / 2 - 15;
-        
-        $('.arrow').animate({left: arrowPos});
-    },
-        function () {
-            //$(this).siblings('.explainer').css({ opacity: 1 });
-        }
-    );
+
 
     $('#menu').click(function(){
         $('#mobile-dropdown').toggle('slide', { direction: 'up', easing: 'easeInOutExpo'});
@@ -213,13 +158,6 @@ $(document).ready(function(){
         $('#mobile-search').toggle('slide', { direction: 'up', easing: 'easeInOutExpo'});
     });
 
-    // adjust height of detail pages
-
-    // var pageHeight = $('.main-content-container').height();
-
-    //$('.detail-page').css({height: $(this).height + pageHeight});
-
-    //bios selector
 
     $('.bios-side-nav li').click(function(){
         var name = $(this).text();
@@ -232,13 +170,6 @@ $(document).ready(function(){
         $('body,html').animate({ scrollTop:  ( posTop + 60 ) }, { duration: 1000, easing: 'easeOutQuad' });        
     });
 
-    $('.new-article').click(function(){
-        $('.article-post').toggle();
-    });
-
-    $('.new-video').click(function() {
-        $('.video-post').toggle();
-    });
 
     $('.articles-select').click(function(){
         if ($(this).hasClass('selected-admin-input')) {
@@ -264,6 +195,14 @@ $(document).ready(function(){
             $('.videos-dashboard').toggle();
             $('.articles-dashboard').toggle();
         }
+    });
+
+    $('.new-article').click(function(){
+        $('.article-post').toggle();
+    });
+
+    $('.new-video').click(function() {
+        $('.video-post').toggle();
     });
 
 
