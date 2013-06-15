@@ -10,23 +10,23 @@
 		</div>
 	</div>
 
-	<%= will_paginate @results %>
+	
 
 	<ul class="article-index">
 
-	<% @results.each do |result| %>
+	<% @search.find_each do |result| %>
 
 		<li>
 			<div class="article-container">
 				<div class="article-photo">
-				<a href="/articles/<%= result.id %>"><%= image_tag(result.photo.url, height: 100) %></a>
+				<a href="/articles/<%= result.id %>"><%= image_tag(result.searchable.photo.url, height: 100) %></a>
 				</div>
-				<span class="article-title"><%= link_to result.title, result %></span> <br />
-				<span><%= result.date.strftime("%b %d, %Y") %> | <%= result.class.name %></span> <br />
-				<% if result.class.name == "Article" %>
-					<div class="article-short-description"><span><%= truncate(result.short_description, length: 105, separator: " ") %></span></div>
+				<span class="article-title"><%= link_to result.searchable.title, result.searchable %></span> <br />
+				<span><%= result.searchable.date.strftime("%b %d, %Y") %> | <%= result.searchable.class.name %></span> <br />
+				<% if result.searchable.class.name == "Article" %>
+					<div class="article-short-description"><span><%= truncate(result.searchable.short_description, length: 105, separator: " ") %></span></div>
 				<% else %>
-					<div class="article-short-description"><span><%= truncate(result.description, length: 105, separator: " ") %></span></div>
+					<div class="article-short-description"><span><%= truncate(result.searchable.description, length: 105, separator: " ") %></span></div>
 				<% end %>
 			</div>
 		</li>

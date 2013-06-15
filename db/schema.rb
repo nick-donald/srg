@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130612163503) do
+ActiveRecord::Schema.define(:version => 20130615025114) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -35,7 +35,13 @@ ActiveRecord::Schema.define(:version => 20130612163503) do
     t.string   "seo_keywords"
   end
 
-  add_index "articles", ["user_id", "created_at"], :name => "index_articles_on_user_id_and_created_at"
+  create_table "pg_search_documents", :force => true do |t|
+    t.text     "content"
+    t.integer  "searchable_id"
+    t.string   "searchable_type"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
 
   create_table "searches", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -51,9 +57,6 @@ ActiveRecord::Schema.define(:version => 20130612163503) do
     t.string   "remember_token"
     t.boolean  "admin",           :default => false
   end
-
-  add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
-  add_index "users", ["username"], :name => "index_users_on_username", :unique => true
 
   create_table "videos", :force => true do |t|
     t.string   "title"

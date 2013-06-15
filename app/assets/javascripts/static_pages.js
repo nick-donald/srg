@@ -29,7 +29,7 @@ $(document).ready(function(){
         }
 
         if ( $window.scrollTop() < height ) {
-            $('.bios-side-nav').css({ position: 'fixed' }).css({ top: 128 });
+            $('.bios-side-nav').css({ position: 'fixed' }).css({ top: 20 + '%' });
         }
         
     });
@@ -161,8 +161,7 @@ $(document).ready(function(){
 
     $('.bios-side-nav li').click(function(){
         var name = $(this).text();
-        name = name.replace(/\s+/g, '');
-        name = name.toLowerCase();
+        name = name.replace(/\s+/g, '').toLowerCase();
 
         var pos = $( '.' + name ).position();
         var posTop = pos.top;

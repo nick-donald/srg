@@ -11,6 +11,10 @@ class Article < ActiveRecord::Base
 
  	scope :recent, limit: 1, order: 'created_at DESC'
 
+ 	include PgSearch
+ 	multisearchable against: [:title, :short_description]
+ 	pg_search_scope :search_by_info, :against => [:title, :short_description]
+
  	searchable do
 		text :content
 		text :title

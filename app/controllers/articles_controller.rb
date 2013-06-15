@@ -2,13 +2,11 @@ class ArticlesController < ApplicationController
 	before_filter :signed_in_user, only: [:create, :destroy, :edit]
 
 	def index
-		@search = Sunspot.search Article do
-    		fulltext params[:search]
-    		paginate page: params[:page], per_page: 10
-    		order_by(:created_at, :desc )
+		if params[:search] == nil
+			@articles = Article.paginate(page: params[:page], per_page: 10)
+		else
+    		@articles = Article.search_by_info(params[:search]).page(params[:page]).per_page(10)
     	end
-
-    	@articles = @search.results
 	end
 
 	def create

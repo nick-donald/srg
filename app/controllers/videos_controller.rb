@@ -16,13 +16,11 @@ class VideosController < ApplicationController
 	end
 
 	def index
-		@search = Sunspot.search Video do
-    		fulltext params[:search]
-    		paginate page: params[:page], per_page: 10
-    		order_by(:created_at, :desc )
+    	if params[:search] == nil
+    		@videos = Video.paginate(page: params[:page], per_page: 10)
+    	else
+    		@videos = Video.search_by_info(params[:search]).page(params[:page]).per_page(10)
     	end
-
-    	@videos = @search.results
 	end
 
 	def destroy
