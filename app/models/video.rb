@@ -16,9 +16,4 @@ class Video < ActiveRecord::Base
   has_attached_file :photo, url: "/assets/products/:id/:style/:basename.:extension", 
   		path: ":rails_root/public/assets/products/:id/:style/:basename.:extension"
 
-  searchable do
-		text :description
-		date :created_at
-		text :title
-	end
 end

@@ -15,10 +15,4 @@ class Article < ActiveRecord::Base
  	multisearchable against: [:title, :short_description]
  	pg_search_scope :search_by_info, :against => [:title, :short_description]
 
- 	searchable do
-		text :content
-		text :title
-		date :created_at
-	end
-
 end
