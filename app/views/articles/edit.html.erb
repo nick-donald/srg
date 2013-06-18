@@ -1,49 +1,74 @@
-<%= form_for(@article, :html => { :multipart => true }) do |f| %>
-	<%= f.label :title %>
-	<%= f.text_field :title, maxlength: 80 %>
+<div class="content-post" style="display:block;">
+	<%= form_for(@article, :html => { :multipart => true }) do |f| %>
 
-	<%= f.label :Article_Type %>
-	<%= f.radio_button(:article_type, "SRG News") %> SRG News <br />
-	<%= f.radio_button(:article_type, "Industry News") %> Industry News
-
-	<%= f.label :author %>
-	<%= f.text_field :author %>
-
-	<%= f.label :date %>
-	<%= f.date_select :date %>
-
-	<%= f.label :short_description %>
-	<%= f.text_field :short_description %>
-
-	<%= f.label :Publication_Name %>
-	<%= f.text_field :publication_name %>
-
-	<%= f.label :Publication_Link %>
-	<%= f.text_field :publication_link %>
-
-	<%= f.label :content %>
-	<%= f.cktext_area :content, :ckeditor => {:language => "usa"} %>
-
-	<div class="article-form-input">
-		<%= f.label :seo_title, class: "form-title" %>
-		<%= f.cktext_area :seo_title %>
+	<div class="article-type">
+		<%= f.label :Article_Type, class: "form-title" %> <br />
+		<%= f.radio_button(:article_type, "SRG News") %> SRG News <br />
+		<%= f.radio_button(:article_type, "Industry News") %> Industry News
 	</div>
 
 	<div class="article-form-input">
-		<%= f.label :seo_title, class: "form-title" %>
-		<%= f.cktext_area :seo_description %>
+		<%= f.label :title, class: "form-title" %>
+		<%= f.text_field :title, maxlength: 80, autocomplete: false %>
 	</div>
 
 	<div class="article-form-input">
-		<%= f.label :seo_title, class: "form-title" %>
-		<%= f.cktext_area :seo_keywords %>
+		<%= f.label :author, class: "form-title" %>
+		<%= f.text_field :author %>
 	</div>
 
-	<%= f.label :Upload_Photo %>
-	<%= f.file_field :photo %>
+	<div class="article-form-input">
+		<%= f.label :publication_date, class: "form-title" %> <br />
+		<%= f.date_select :date %>
+	</div>
+
+	<br />
+
+	<div class="article-form-input">
+		<%= f.label :short_description, class: "form-title" %> <br />
+		<%= f.text_area :short_description, rows: "2", class: "wide-form" %>
+	</div>
+
+	<div class="article-form-input">
+		<%= f.label :Publication_Name, class: "form-title" %>
+		<%= f.text_field :publication_name %>
+	</div>
+
+	<div class="article-form-input">
+		<%= f.label :Publication_Link, class: "form-title" %>
+		<%= f.text_field :publication_link %>
+	</div>
+
+	<div class="article-form-input">
+		<%= f.label :content, class: "form-title" %>
+		<%= f.cktext_area :content, :ckeditor => {:language => "usa"} %>
+	</div>
+
+	<div class="article-form-input">
+		<%= f.label :SEO_title, class: "form-title" %>
+		<%= f.text_field :seo_title %>
+	</div>
+
+	<div class="article-form-input">
+		<%= f.label :seo_description, class: "form-title" %>
+		<%= f.text_field :seo_description, class: "wide-form" %>
+	</div>
+
+	<div class="article-form-input">
+		<%= f.label :seo_keywords, class: "form-title" %> <br />
+		<%= f.text_area :seo_keywords, rows: "2",  class: "wide-form" %>
+	</div>
+	<div class="article-form-input">
+		<%= f.label :photo_upload, class: "form-title" %> <br />
+		<span>Current Photo</span> <br />
+		<img src="<%= @article.photo.url %>", height: 200 >
+		<%= f.file_field :photo %>
+		<span>jpg, gif, or png only</span>
+	</div>
 
 	<%= f.label :enabled_?, class: "form-title" %>
 	<%= f.check_box :enabled, {}, true, false %>
 
 	<%= f.submit "Save Changes" %>
 <% end %>
+</div>

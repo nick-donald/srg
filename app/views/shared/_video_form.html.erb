@@ -1,4 +1,4 @@
-<%= form_for(@video) do |f| %>
+<%= form_for(@video, :html => { :multipart => true }) do |f| %>
 	<%= f.label :title, class: "form-title" %>
 	<%= f.text_field :title, maxlength: 80, autocomplete: false %>
 
@@ -32,7 +32,11 @@
 		<%= f.text_field :seo_keywords %>
 	</div>
 
-	<%= f.file_field :photo %>
+	<div class="article-form-input">
+		<%= f.label :photo_upload, class: "form-title" %>
+		<%= f.file_field :photo %>
+		<span>jpg, gif, or png only</span>
+	</div>
 
 	<%= f.label :enabled_?, class: "form-title" %>
 	<%= f.check_box :enabled, {}, true, false %>

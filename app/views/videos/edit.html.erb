@@ -1,42 +1,63 @@
-<%= form_for(@video, :html => { :multipart => true }) do |f| %>
-	<%= f.label :title, class: "form-title" %>
-	<%= f.text_field :title, maxlength: 80, autocomplete: false %>
+<div class="content-post" style="display:block;">
+	<%= form_for(@video, :html => { :multipart => true }) do |f| %>
 
-	<%= f.label :description, class: "form-title" %>
-	<%= f.text_field :description %>
+		<div class="article-form-input">
+			<%= f.label :title, class: "form-title" %>
+			<%= f.text_field :title, maxlength: 80, autocomplete: false %>
+		</div>
 
-	<%= f.label :embed_link, class: "form-title" %>
-	<%= f.text_field :embed_link %>
+		<div class="article-form-input">
+			<%= f.label :description, class: "form-title" %> <br />
+			<%= f.cktext_area :description, rows: "4" %> <br />
+		</div>
 
-	<%= f.label :publication, class: "form-title" %>
-	<%= f.text_field :publication %>
+		<div class="article-form-input">
+			<%= f.label :embed_link, class: "form-title" %> <br />
+			<%= f.text_area :embed_link, rows: "4" %> <br />
+		</div>
 
-	<%= f.label :publication_link, class: "form-title" %>
-	<%= f.text_field :publication_link %>
+		<div class="article-form-input">
+			<%= f.label :publication, class: "form-title" %>
+			<%= f.text_field :publication %>
+		</div>
 
-	<%= f.label :publication_date, class: "form-title" %>
-	<%= f.date_select :date %>
+		<div class="article-form-input">
+			<%= f.label :publication_link, class: "form-title" %>
+			<%= f.text_field :publication_link %>
+		</div>
 
-	<div class="article-form-input">
-		<%= f.label :seo_title, class: "form-title" %>
-		<%= f.cktext_area :seo_title %>
-	</div>
+		<div class="article-form-input">
+			<%= f.label :publication_date, class: "form-title" %> <br />
+			<%= f.date_select :date %>
+		</div>
 
-	<div class="article-form-input">
-		<%= f.label :seo_title, class: "form-title" %>
-		<%= f.cktext_area :seo_description %>
-	</div>
+		<div class="article-form-input">
+			<%= f.label :seo_title, class: "form-title" %>
+			<%= f.text_field :seo_title %>
+		</div>
 
-	<div class="article-form-input">
-		<%= f.label :seo_title, class: "form-title" %>
-		<%= f.cktext_area :seo_keywords %>
-	</div>
+		<div class="article-form-input">
+			<%= f.label :seo_description, class: "form-title" %>
+			<%= f.text_field :seo_description %>
+		</div>
 
-	<%= f.file_field :photo %>
+		<div class="article-form-input">
+			<%= f.label :seo_keywords, class: "form-title" %>
+			<%= f.text_field :seo_keywords %>
+		</div>
 
-	<%= f.label :enabled_?, class: "form-title" %>
-	<%= f.check_box :enabled, {}, true, false %>
+		<div class="article-form-input">
+			<%= f.label :photo_upload, class: "form-title" %> <br />
+			<span>Current Photo</span> <br />
+			<img src="<%= @video.photo.url %>", height: 200 >
+			<%= f.file_field :photo %>
+			<span>jpg, gif, or png only</span>
+		</div>
 
-	<%= f.submit "Save Changes" %>
+		<%= f.label :enabled_?, class: "form-title" %>
+		<%= f.check_box :enabled, {}, true, false %>
 
-<% end %>
+		<%= f.submit "Save Changes" %>
+
+	<% end %>
+</div>
