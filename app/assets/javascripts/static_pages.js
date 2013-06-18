@@ -139,14 +139,15 @@ $(document).ready(function(){
         $('.retail-litigation').find('.nav-span-title').text('Litigation');
     }
     
-
-    $('.explainer').hover(function(){
-        $(this).find('.explainer-content').animate({left: 450 });
-    }, 
-        function(){
-            $(this).find('.explainer-content').animate({left: 0 });
-        }
-    );
+    if ($window.width() >= 550) {
+        $('.explainer').hover(function(){
+            $(this).find('.explainer-content').animate({left: 450 });
+        }, 
+            function(){
+                $(this).find('.explainer-content').animate({left: 0 });
+            }
+        );
+    }
     
 
 

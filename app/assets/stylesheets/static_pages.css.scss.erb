@@ -570,7 +570,7 @@ a {
 
 .mini-content p {
     color: white !important;
-    font-size: 1.2em;
+    font-size: 1em;
     line-height: 30px;
 }
 
@@ -1106,6 +1106,22 @@ span.quote-author {
         font-size: 1.7em;
     }
 
+    .consulting {
+
+    }
+
+    .litigation {
+        background-position: 55% 0;
+    }
+
+    .MA {
+        background-position: 0 -325px;
+    }
+
+    .marketing {
+        background-position: 55% -325px;
+    }
+
     .mini-title span {
         font-size: 1.3em;
     }
@@ -1227,6 +1243,23 @@ span.quote-author {
     .explainer {
         margin-left: 6px;
     }
+
+    .consulting {
+
+    }
+
+    .litigation {
+        background-position: 35% 0;
+    }
+
+    .MA {
+        background-position: 0 -325px;
+    }
+
+    .marketing {
+        background-position: 35% -325px;
+    }
+
 
     .mini-title span {
         font-size: 1.3em;
@@ -1405,6 +1438,11 @@ span.quote-author {
         z-index: 1000;
     }
 
+    .container {
+        width: 95%;
+        overflow: auto;
+    }
+
     #buttons-container {
         display: none;
     }
@@ -1431,7 +1469,6 @@ span.quote-author {
     }
 
     .mobile-button {
-        position: relative;
         float: right;
         display: block;
         width: 45px;
@@ -1445,6 +1482,7 @@ span.quote-author {
     #menu {
         background-image: url(<%= asset_path 'Menu_button.png' %>);
         background-size: 80%;
+        border-right: 1px solid white;
     }
 
     #search {
@@ -1546,15 +1584,32 @@ span.quote-author {
         width: 95%;
     }
     
-    #content {
-        height: 1700px;
-    }
-    
     .explainer {
         width: 100%;
         height: 300px;
         margin-left: 0;
         margin-top: 20px;
+        background-image: none;
+        background-color: #2A64CF;
+    }
+
+    .explainer-content {
+        left: 450px;
+    }
+
+    .consulting {
+        background-position: 35% 0;
+    }
+
+    .litigation {
+        background-position: 35% 0;
+    }
+
+    .MA {
+        background-position: 0 -325px;
+    }
+
+    .marketing {
     }
     
     .mini-content {
@@ -1577,8 +1632,7 @@ span.quote-author {
         background-image: none;
         background-color: rgb(120,120,120);
         width: 95%;
-        margin-top: 0;
-        top: 820px;
+        margin: 30px auto;
         height: 230px;
     }
     

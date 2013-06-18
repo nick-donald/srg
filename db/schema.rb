@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130618140625) do
+ActiveRecord::Schema.define(:version => 20130618195931) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -25,13 +25,13 @@ ActiveRecord::Schema.define(:version => 20130618140625) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
-    t.string   "short_description"
+    t.text     "short_description"
     t.string   "publication_name"
     t.string   "publication_link"
     t.string   "article_type"
     t.boolean  "enabled"
     t.string   "seo_title"
-    t.string   "seo_description"
+    t.text     "seo_description"
     t.string   "seo_keywords"
   end
 
@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(:version => 20130618140625) do
 
   create_table "videos", :force => true do |t|
     t.string   "title"
-    t.string   "description"
+    t.text     "description"
     t.string   "embed_link"
     t.string   "publication"
     t.string   "publication_link"
@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(:version => 20130618140625) do
     t.datetime "date"
     t.boolean  "enabled"
     t.string   "seo_title"
-    t.string   "seo_description"
+    t.text     "seo_description"
     t.string   "seo_keywords"
   end
 
