@@ -1,0 +1,12 @@
+<%= render "layouts/admin_header" %>
+<div class="content-edit content-post" style="display:block;">
+	<%= form_for(@bio) do |f| %>
+		<%= f.label :name, class: "form-title" %>
+		<%= f.text_field :name %>
+
+		<%= f.label :content, class: "form-title" %>
+		<%= f.cktext_area :content %>
+
+		<%= f.submit "Submit Changes" %>
+	<% end %>
+</div>

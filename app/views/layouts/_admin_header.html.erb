@@ -1,13 +1,14 @@
 <div id="admin_header">
 	<div class="wrapper">
 		<div class="pull-left">
-			<h1>SRG Admin</h1>
+			<h1><%= link_to 'SRG Admin', current_user %></h1>
 		</div>
 		<div class="pull-right">
 			<% if signed_in? %>
 				<ul class="admin-signout">
 					<li><%= link_to "New Article", "#", class: "admin-new-article new-article" %></li>
 					<li><%= link_to "New Video", "#", class: "admin-new-article new-video" %></li>
+					<li><%= link_to "New Bio", "#", class: "admin-new-article new-bio" %></li>
 					<li><%= link_to "Sign Out", signout_path, method: "delete" %></li>
 				</ul>
 			<% end %>

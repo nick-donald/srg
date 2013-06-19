@@ -11,6 +11,9 @@ class UsersController < ApplicationController
 
   		@video = current_user.videos.build if signed_in?
   		@videos = Video.paginate(page: params[:page],  per_page: 10)
+
+  		@bio = current_user.bios.build if signed_in?
+  		@bios = Bio.paginate(page: params[:page],  per_page: 10)
 	end
 
 	def new

@@ -7,6 +7,10 @@
 <% if signed_in? %>
 	<div class="section-title"><span>You are signed in as <%= @user.username %></span></div>
 
+	<div class="content-post bio-post">
+		<%= render 'shared/bio_form' %>
+	</div>
+
 	<div class="content-post article-post">
 		<%= render 'shared/article_form' %>
 	</div>
@@ -20,12 +24,11 @@
 	<% end %>
 
 	<div id="admin-type-select">
-		<div class="admin-select-button pull-left articles-select selected-admin-input">
-			<span>Articles</span>
-		</div>
-		<div class="admin-select-button videos-select pull-right">
-			<span>Videos</span>
-		</div>
+		<ul>
+			<li class="admin-select-button articles-select selected-admin-input"><span>Articles</span></li>
+			<li class="admin-select-button videos-select"><span>Videos</span></li>
+			<li class="admin-select-button bios-select"><span>Bios</span></li>
+		</ul>
 	</div>
 <div class="admin-dashboard articles-dashboard">
 
@@ -87,6 +90,34 @@
 	</table>
 
 	<%= will_paginate @videos %>
+</div>
+
+<div class="admin-dashboard bios-dashboard">
+
+	<%= page_entries_info @bios %>
+	<%= will_paginate @bios %>
+
+<table class="admin-table">
+		<thead>
+			<tr>
+				<th scope="col" class="first-col">Bio Name</th>
+				<th scope="col">Date Posted</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @bios.each do |bio| %>
+				<tr class="admin-article">
+					<td><span><%= bio.name %> |
+					<%= link_to "Edit", edit_bio_path(bio), class: "admin-edit" %>  |
+					<%= link_to "Delete", bio, class: "admin-edit", method: :delete,
+									  data: { confirm: "You sure?" } %></span></td>
+					<td><span><%= bio.created_at.strftime("%m/%d/%y") %></span></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+
+	<%= will_paginate @bios %>
 </div>
 
 

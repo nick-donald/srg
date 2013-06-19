@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   has_secure_password
   has_many :articles
   has_many :videos
+  has_many :bios
 
   before_save { |user| user.username = username.downcase }
   before_save :create_remember_token

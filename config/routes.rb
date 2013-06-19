@@ -4,6 +4,7 @@ SRG::Application.routes.draw do
   resources :articles
   resources :videos
   resources :search
+  resources :bios
 
   get "static_pages/home"
 
@@ -34,7 +35,7 @@ SRG::Application.routes.draw do
   match '/marketingadvertising/digitalmarketing', to: 'static_pages#marketingadvertising_digitalmarketing'
 
   # other page links 
-  match '/bios', to: 'static_pages#bios'
+  # match '/bios', to: 'static_pages#bios'
   match '/press', to: 'static_pages#press_main'
 
   # user routes

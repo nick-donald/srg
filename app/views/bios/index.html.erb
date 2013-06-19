@@ -1,0 +1,33 @@
+<% provide(:title, "Bios") %>
+<div class="detail-page">
+	<div class="wrapper">
+		<div class="main-content-container">
+			<aside>
+				<div class="side-nav-container bios">
+					<ul class="side-nav bios-side-nav">
+						<% @bios.each do |bio| %>
+							<li><a href='#'><%= bio.name %></a></li>
+						<% end %>
+					</ul>
+				</div>
+			</aside>
+			<div class="detail-content pull-right bio-container">
+				<div class="section-title left-align">
+					<span>Select SRG Bios</span>
+				</div>
+				<div class="section-detail-text">
+					<% @bios.each do |bio| %>
+					<div class="bio <%= bio.name.delete(' ').downcase %>">
+						<div class="bio-title">
+							<span><%= bio.name %><span>
+						</div>
+						<div class="bio-content">
+							<%= sanitize bio.content %>
+						</div>
+					</div>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
