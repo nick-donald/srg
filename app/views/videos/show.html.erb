@@ -15,7 +15,9 @@
 				<span><%= @video.date.strftime("%B %d, %Y") %></span>
 			</div>
 			<div class="article-detail-content">
-				<%= raw @video.embed_link %> <br />
+				<div class="video-embed">
+					<%= raw @video.embed_link %>
+				</div> <br />
 				<span><%= sanitize @video.description %></span>
 			</div>
 		</div>
