@@ -13,9 +13,9 @@ SRG::Application.routes.draw do
 
   # consulting links
   match '/consulting', to: 'static_pages#consulting_main'
-  match '/consulting/supermarkets', to: 'static_pages#consulting_supermarket'
+  match '/consulting/retailers', to: 'static_pages#consulting_retailer'
   match '/consulting/wholesalers', to: 'static_pages#consulting_wholesale'
-  match '/consulting/manufacturers', to: 'static_pages#consulting_manufacture'
+  match '/consulting/brands', to: 'static_pages#consulting_manufacture'
 
   # litigation links
   match '/litigation', to: 'static_pages#litigation_main'
