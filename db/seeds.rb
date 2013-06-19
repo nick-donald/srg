@@ -9,7 +9,7 @@
 
 # seed inital user
 User.delete_all
-User.create(name: admin, username: admin, password: admin, password_confirmation: admin)
+User.create(name: 'admin', username: 'admin', password: 'admin', password_confirmation: 'admin')
 
 # seed bios
 Bio.delete_all
