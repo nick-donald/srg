@@ -2,6 +2,8 @@
 	<% @users.each do |user| %>
 		<li>
 			<%= link_to user.name, user %>
+			<%= link_to "Delete", user, class: "admin-edit", method: :delete,
+									  data: { confirm: "You sure?" } %>
 		</li>
 	<% end %>
 </ul>
