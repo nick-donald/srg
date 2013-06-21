@@ -14,7 +14,7 @@
 				<br />
 				<span><%= @article.date.strftime("%B %d, %Y") %></span>
 			</div>
-			<div class="article-detail-content">
+			<div class="article-detail-content" id="article-text">
 				<%= image_tag(@article.photo.url, width: '200', id: 'article-detail-img') %>
 				<p><%= sanitize @article.content %></p>
 			</div>

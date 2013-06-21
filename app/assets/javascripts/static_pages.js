@@ -178,9 +178,9 @@ $(document).ready(function(){
 
         else {
             $(this).toggleClass('selected-admin-input');
-            $(this).siblings().removeClass('selected-admin-input');
-            $('.articles-dashboard').show();
-            $('.videos-dashboard, .bios-dashboard').hide();
+            $('.videos-select').toggleClass('selected-admin-input');
+            $('.articles-dashboard').toggle();
+            $('.videos-dashboard').toggle();
         }
     });
 
@@ -191,9 +191,9 @@ $(document).ready(function(){
 
         else {
             $(this).toggleClass('selected-admin-input');
-            $(this).siblings().removeClass('selected-admin-input');
-            $('.videos-dashboard').show();
-            $('.articles-dashboard, .bios-dashboard').hide();
+            $('.articles-select').toggleClass('selected-admin-input');
+            $('.videos-dashboard').toggle();
+            $('.articles-dashboard').toggle();
         }
     });
 
