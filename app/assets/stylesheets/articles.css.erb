@@ -39,6 +39,24 @@
 	color: blue;
 }
 
+.video-embed {
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 30px;
+	height: 0;
+	overflow: hidden;
+}
+
+.video-embed iframe,
+.video-embed object,
+.video-embed embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
 .article-return {
 	width: 340px;
 	height: 100px;
@@ -205,15 +223,20 @@ span.disabled {
 		margin-right: auto;
 	}
 
-	.video-embed {
-		overflow: hidden;
-	}
-
 	.article-short-description {
 		display: none;
 	}
 
 	.article-title {
 		font-size: 1.2em;
+	}
+
+	input.btn {
+		display: none;
+	}
+
+	input.index-search {
+		left: 50%;
+		margin-left: -217px;
 	}
 }
