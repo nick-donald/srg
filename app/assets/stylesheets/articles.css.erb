@@ -5,6 +5,17 @@
 	overflow: auto;
 }
 
+.index-search {
+	font-family: 'Titillium Web', sans-serif;
+	font-size: 1.3em;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	-webkit-transition: outline 0.2s;
+	-moz-transition: 	outline 0.2s;
+	transition: 		outline 0.2s;
+}
+
 .article-detail-container {
 	width: 100%;
 }
@@ -64,8 +75,6 @@
 }
 
 .article-search-box {
-	width: 100%;
-	
 }
 
 .article-search-box input {
@@ -78,7 +87,6 @@
 
 .article-container {
 	width: 100%;
-	height: 100px;
 	border-left: solid;
 	margin-bottom: 20px;
 	padding: 5px;
@@ -141,6 +149,8 @@ span.disabled {
 	width: 300px;
 	padding: 10px;
 	border: solid thin #204b9a;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 @media all and (min-width: 790px) and (max-width: 959px) {
@@ -160,7 +170,32 @@ span.disabled {
 @media all and (max-width: 549px) {
 
 	.article-index-container {
-		width: 500px;
+		width: 100%;
+		margin-top: 60px;
+	}
+
+	.page-info {
+		width: 100%;
+		text-align: center;
+		border-left: none;
+	}
+
+	.article-index {
+		padding-left: 0;
+	}
+
+	.article-container {
+		width: 100%;
+		border-top: solid thin;
+		border-bottom: solid thin;
+		border-left: none;
+		overflow: auto;
+		height: auto;
+	}
+
+	.article-inner-container {
+		width: 90%;
+		overflow: auto;
 	}
 
 	.total-article-container{
@@ -172,5 +207,13 @@ span.disabled {
 
 	.video-embed {
 		overflow: hidden;
+	}
+
+	.article-short-description {
+		display: none;
+	}
+
+	.article-title {
+		font-size: 1.2em;
 	}
 }
