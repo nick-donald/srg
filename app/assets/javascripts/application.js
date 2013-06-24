@@ -14,5 +14,6 @@
 //= require jquery_ujs
 //= require jquery-ui.min
 //= require ckeditor/init
+//= require jpanelmenu.min
 //= require_tree .
 
