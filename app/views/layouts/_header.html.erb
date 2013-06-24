@@ -5,7 +5,7 @@
                     <a href="/"><span>Strategic Resource Group</span></a>
                 </div>
                 <div class="mobile-button" id="menu"></div>
-                <div class="mobile-button" id="search"></div>
+                <div class="mobile-button" id="mobile-search-button"></div>
                 <div id="desktop-search">
                     <%= form_tag search_path(:search), :method => :get do %>
                         <%= text_field_tag :search, params[:search], class: "big-search", placeholder: "Search SRG" %>
@@ -15,8 +15,8 @@
         </div>
         <div id="mobile-search">
                 <%= form_tag search_path(:search), :method => :get do %>
-                        <%= text_field_tag :search, params[:search], class: "big-search", id: "mobile-search", placeholder: "Search SRG" %>
-                    <% end %>
+                    <%= text_field_tag :search, params[:search], class: "big-search", placeholder: "Search SRG" %>
+                <% end %>
         </div>
         <div id="mobile-dropdown">
             <ul id="mobile-buttons">

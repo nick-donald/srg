@@ -15,4 +15,8 @@ class Article < ActiveRecord::Base
  	multisearchable against: [:title, :short_description]
  	pg_search_scope :search_by_info, :against => [:title, :short_description]
 
+ 	def to_param
+ 		"#{id} #{title}".parameterize
+ 	end
+
 end

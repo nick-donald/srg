@@ -16,4 +16,7 @@ class Video < ActiveRecord::Base
   has_attached_file :photo, url: "/assets/products/:id/:style/:basename.:extension", 
   		path: ":rails_root/public/assets/products/:id/:style/:basename.:extension"
 
+  	def to_param
+ 		"#{id} #{title}".parameterize
+ 	end
 end
