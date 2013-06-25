@@ -8,9 +8,9 @@ class Article < ActiveRecord::Base
  	default_scope order: 'articles.created_at DESC'
 
  	has_attached_file :photo,
-                    storage: :s3,
-                    s3_credentials: "#{RAILS_ROOT}/config/s3.yml",
-                    path: "SRG/articles/:attachment/:id.:extension"
+                    :storage => :s3, 
+                  	:s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
+                  	:path => "appname/:attachment/:id.:extension"
 
  	scope :recent, limit: 1, order: 'created_at DESC'
 

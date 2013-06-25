@@ -14,11 +14,11 @@ class Video < ActiveRecord::Base
 
 
   has_attached_file :photo,
-                    storage: :s3,
-                    s3_credentials: "#{RAILS_ROOT}/config/s3.yml",
-                    path: "SRG/videos/:attachment/:id.:extension"
+                    :storage => :s3, 
+                    :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
+                    :path => "appname/:attachment/:id.:extension"
 
-  	def to_param
- 		"#{id} #{title}".parameterize
+  def to_param
+ 	  "#{id} #{title}".parameterize
  	end
 end
