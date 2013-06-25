@@ -13,10 +13,7 @@ class Video < ActiveRecord::Base
   scope :recent, limit: 1, order: 'created_at DESC'
 
 
-  has_attached_file :photo,
-                    :storage => :s3, 
-                    :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
-                    :path => "appname/:attachment/:id.:extension"
+  has_attached_file :photo
 
   def to_param
  	  "#{id} #{title}".parameterize
