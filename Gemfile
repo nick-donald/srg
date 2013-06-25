@@ -14,6 +14,7 @@ gem 'pg'
 gem 'pg_search'
 gem 'aws-sdk'
 gem 'aws-s3'
+gem 'unicorn'
 
 
 # Bundle edge Rails instead:
