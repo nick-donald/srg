@@ -7,7 +7,7 @@ class Article < ActiveRecord::Base
 
  	default_scope order: 'articles.created_at DESC'
 
- 	has_attached_file :photo, url: "/assets/products/:id/:style/:basename.:extension", path: ":rails_root/public/assets/products/:id/:style/:basename.:extension"
+ 	has_attached_file :photo
 
  	scope :recent, limit: 1, order: 'created_at DESC'
 

@@ -13,8 +13,7 @@ class Video < ActiveRecord::Base
   scope :recent, limit: 1, order: 'created_at DESC'
 
 
-  has_attached_file :photo, url: "/assets/products/:id/:style/:basename.:extension", 
-  		path: ":rails_root/public/assets/products/:id/:style/:basename.:extension"
+  has_attached_file :photo
 
   	def to_param
  		"#{id} #{title}".parameterize

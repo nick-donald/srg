@@ -12,6 +12,7 @@ gem 'sunspot_rails'
 gem 'tanker'
 gem 'pg'
 gem 'pg_search'
+gem 'aws-sdk'
 
 
 # Bundle edge Rails instead:
