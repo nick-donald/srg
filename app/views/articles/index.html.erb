@@ -29,7 +29,7 @@
 						<div class="article-photo">
 							<a href="/articles/<%= article.id %>"><%= image_tag(article.photo.url, height: 100) %></a>
 						</div>
-						<p class="article-title"><%= link_to article.title, article %></p>						<span>By <%= article.author %>, <%= link_to article.publication_name, article.publication_link, class: 'admin-edit' %> </span> <br />
+						<p class="index-article-title"><%= link_to article.title, article %></p>						<span>By <%= article.author %>, <%= link_to article.publication_name, article.publication_link, class: 'admin-edit' %> </span> <br />
 						<span><%= article.date.strftime("%b %d, %Y") %></span> <br />
 						<div class="article-short-description"><span><%= truncate(article.short_description, length: 100, separator: " ") %></span>
 						</div>
