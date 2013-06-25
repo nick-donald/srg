@@ -10,7 +10,7 @@ class Article < ActiveRecord::Base
  	has_attached_file :photo,
                       :storage => :s3,
                       :path => ":attachment/videos/:id/:style.:extension",
-                      :bucket => 'srgbucket'
+                      :bucket => 'srginsightbucket'
 
  	scope :recent, limit: 1, order: 'created_at DESC'
 

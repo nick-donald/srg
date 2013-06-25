@@ -16,7 +16,7 @@ class Video < ActiveRecord::Base
   has_attached_file :photo,
                     :storage => :s3,
                     :path => ":attachment/videos/:id/:style.:extension",
-                    :bucket => 'srgbucket'
+                    :bucket => 'srginsightbucket'
 
   def to_param
  	  "#{id} #{title}".parameterize
