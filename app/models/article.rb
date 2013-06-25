@@ -7,7 +7,8 @@ class Article < ActiveRecord::Base
 
  	default_scope order: 'articles.created_at DESC'
 
- 	has_attached_file :photo
+ 	has_attached_file :photo,
+                      :path => "SRG/srgbucket/videos/:id.:extension"
 
  	scope :recent, limit: 1, order: 'created_at DESC'
 
