@@ -1,0 +1,12 @@
+development:
+  bucket: srgbucket
+  access_key_id: AKIAJXVAOYNXWVXNXYRA
+  secret_access_key: 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
+test:
+  bucket: srgbucket
+  access_key_id: AKIAJXVAOYNXWVXNXYRA
+  secret_access_key: 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
+production:
+  bucket: srgbucket
+  access_key_id: AKIAJXVAOYNXWVXNXYRA
+  secret_access_key: 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
