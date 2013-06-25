@@ -121,6 +121,7 @@
 	height: 100px;
 	overflow: hidden;
 	text-align: center;
+	margin-right: 8px;
 }
 
 .article-photo img { 
@@ -132,6 +133,9 @@
 
 .article-title {
 	font-size: 1.4em;
+	color: black !important;
+	font-family: 'Titillium Web', sans-serif;
+	margin-bottom: 0;
 }
 
 
@@ -228,6 +232,10 @@ span.disabled {
 		margin-right: auto;
 	}
 
+	.article-photo {
+		display: none;
+	}
+
 	.article-short-description {
 		display: none;
 	}
@@ -240,8 +248,12 @@ span.disabled {
 		display: none;
 	}
 
+	.article-search-box {
+		width: 100%;
+	}
+
 	input.index-search {
-		left: 50%;
-		margin-left: -217px;
+		position: relative;
+		float: left;
 	}
 }
