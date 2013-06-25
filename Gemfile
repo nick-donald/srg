@@ -13,6 +13,7 @@ gem 'tanker'
 gem 'pg'
 gem 'pg_search'
 gem 'aws-sdk'
+gem 'aws-s3'
 
 
 # Bundle edge Rails instead:
