@@ -23,6 +23,6 @@
     <%= render 'layouts/footer'%>
     <% end %>
 
-    <%= render 'layouts/ga' if RAILS_ENV == 'production' %>
+    <%= render 'layouts/ga' if Rails.env == "production" %>
 </body>
 </html>
