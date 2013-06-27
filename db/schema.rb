@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130626171446) do
+ActiveRecord::Schema.define(:version => 20130627175438) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -54,8 +54,10 @@ ActiveRecord::Schema.define(:version => 20130626171446) do
     t.text     "seo_description"
     t.string   "seo_keywords"
     t.string   "slug"
+    t.integer  "page_order"
   end
 
+  add_index "pages", ["page_order"], :name => "index_pages_on_page_order"
   add_index "pages", ["slug"], :name => "index_pages_on_slug", :unique => true
   add_index "pages", ["user_id", "created_at"], :name => "index_pages_on_user_id_and_created_at"
 

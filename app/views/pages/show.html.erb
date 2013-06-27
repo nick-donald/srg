@@ -9,7 +9,7 @@
 						<% @pages.each do |page| %>
 							<% if page.page_type == @page.page_type %>
 								<%= content_tag :li, class: @page == page ? "selected-side-nav": "" do 
-										link_to page.url_title.capitalize, page 
+										link_to page.url_title, page 
 									end 
 								%>
 							<% end %>

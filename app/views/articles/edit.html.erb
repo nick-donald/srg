@@ -1,4 +1,8 @@
-<div class="content-post" style="display:block;">
+<% provide(:title, "Edit article") %>
+<div class="content-post content-edit">
+	<div class="section-title" style="padding: 5px">
+		<span>Edit: </span><%= content_tag(:span, @article.title, style: "border: solid thin #00008B") %>
+	</div>
 	<%= form_for(@article, :html => { :multipart => true }) do |f| %>
 
 	<div class="article-type">

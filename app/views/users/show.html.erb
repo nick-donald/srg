@@ -142,9 +142,7 @@
 			<% @pages.each do |page| %>
 				<tr class="admin-article">
 					<td><span><%= link_to page.title, page, class: "admin-article-title" %> |
-					<%= link_to "Edit", edit_page_path(page), class: "admin-edit" %>  |
-					<%= link_to "Delete", page, class: "admin-edit", method: :delete,
-									  data: { confirm: "You sure?" } %></span></td>
+					<%= link_to "Edit", edit_page_path(page), class: "admin-edit" %></span></td>
 					<td><span><%= page.page_type %></span></td>
 					<td><span><%= page.updated_at.strftime("%m/%d/%y") %></span></td>
 				</tr>

@@ -15,25 +15,28 @@ SRG::Application.routes.draw do
 
   # consulting links
   match '/consulting', to: 'static_pages#consulting_main'
-  match '/consulting/retailers', to: 'static_pages#consulting_retailer'
-  match '/consulting/wholesalers', to: 'static_pages#consulting_wholesale'
-  match '/consulting/brands', to: 'static_pages#consulting_manufacture'
+  match '/consulting/retailers', to: 'pages#show', defaults: { id: 'retailers' }
+  match '/consulting/wholesalers', to: 'pages#show', defaults: { id: 'wholesalers' }
+  match '/consulting/brands', to: 'pages#show', defaults: { id: 'consumer-brands' }
 
   # litigation links
   match '/litigation', to: 'static_pages#litigation_main'
-  match '/litigation/dispute', to: 'static_pages#litigation_dispute'
-  match '/litigation/antitrust', to: 'static_pages#litigation_antitrust'
-  match '/litigation/expertwitness', to: 'static_pages#litigation_expertwitness'
+  match '/litigation/dispute', to: 'pages#show', defaults: { id: 'dispute-advisory' }
+  match '/litigation/antitrust', to: 'pages#show', defaults: { id: 'anti-trust' }
+  match '/litigation/expertwitness', to: 'pages#show', defaults: { id: 'expert-witness' }
+  match '/litigation/takeoverdefense', to: 'pages#show', defaults: { id: 'takeover-defense' }
 
   # financial services links
-  match '/financialservices', to: 'static_pages#finance_main'
-  match '/financialservices/duedilligence', to: 'static_pages#finance_duedilligence'
-  match '/financialservices/ma', to: 'static_pages#finance_ma'
+  match '/acquisitions-ftc', to: 'static_pages#finance_main'
+  match '/acquisitions-ftc/duedilligence', to: 'pages#show', defaults: { id: 'due-dilligence' }
+  match '/acquisitions-ftc/ma', to: 'pages#show', defaults: { id: 'mergers-acquisitions' }
+  match '/acquisitions-ftc/ftc', to: 'pages#show', defaults: { id: 'ftc' }
 
   # marketing and advertising links
-  match '/marketingadvertising', to: 'static_pages#marketingadvertising_main'
-  match '/marketingadvertising/adservices', to: 'static_pages#marketingadvertising_adservices'
-  match '/marketingadvertising/digitalmarketing', to: 'static_pages#marketingadvertising_digitalmarketing'
+  match '/marketing', to: 'static_pages#marketingadvertising_main'
+  match '/marketing/adservices', to: 'pages#show', defaults: { id: 'advertising-services' }
+  match '/marketing/digitalmarketing', to: 'pages#show', defaults: { id: 'digital-marketing' }
+  match '/marketing/brandbuilding', to: 'pages#show', defaults: { id: 'brand-building' }
 
   # other page links 
   # match '/bios', to: 'static_pages#bios'

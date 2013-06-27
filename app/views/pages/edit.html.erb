@@ -1,11 +1,18 @@
-<%= form_for(@page) do |f| %>
-	<%= f.label :title %>
-	<%= f.text_field :title %>
-	
-	<%= f.select(:page_type, options_for_select([['constuling'], ['litigation'], ['acquisitions'], ['marketing']])) %> <br />
+<% provide(:title, "Edit Page") %>
+<div class="content-post content-edit">
+	<div class="section-title" style="padding: 5px">
+		<span>Edit: </span><%= content_tag(:span, @page.title, style: "border: solid thin #00008B") %>
+	</div>
+	<%= form_for(@page) do |f| %>
+		<%= f.label :title %>
+		<%= f.text_field :title %>
 
-	<%= f.label :content %>
-	<%= f.cktext_area :content %>
+		<%= f.label :page_order, "Page Order" %>
+		<%= f.text_field :page_order, size: "2", maxlength: "2" %>
 
-	<%= f.submit "Submit Changes", class: "btn" %>
-<% end %>
+		<%= f.label :content %>
+		<%= f.cktext_area :content %>
+
+		<%= f.submit "Submit Changes", class: "btn" %>
+	<% end %>
+</div>

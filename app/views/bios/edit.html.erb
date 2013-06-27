@@ -1,5 +1,8 @@
-<%= render "layouts/admin_header" %>
-<div class="content-edit content-post" style="display:block;">
+<% provide(:title, "Edit Bio") %>
+<div class="content-edit content-post">
+	<div class="section-title" style="padding: 5px">
+		<span>Edit: </span><%= content_tag(:span, @bio.name, style: "border: solid thin #00008B") %>
+	</div>
 	<%= form_for(@bio) do |f| %>
 		<%= f.label :name, class: "form-title" %>
 		<%= f.text_field :name %>

@@ -1,28 +1,30 @@
 <!DOCTYPE html>
-<html <%= yield(:special_html) %>>
-<head>
-  <title>Strategic Resource Group | <%= yield(:title) %></title>
-  <link href='http://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Signika:400,600' rel='stylesheet' type='text/css'>
-  <meta name="description" content="<%= yield(:meta_description) %>">
-  <meta name="keywords" content="<%= yield(:meta_keywords) %>">
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html>
+  <head>
+    <title>Strategic Resource Group | <%= yield(:title) %></title>
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Signika:400,600' rel='stylesheet' type='text/css'>
+    <meta name="description" content="<%= yield(:meta_description) %>">
+    <meta name="keywords" content="<%= yield(:meta_keywords) %>">
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
 
-  <% if (params[:controller] == 'static_pages') || (params[:controller] == 'articles') || (params[:controller] == 'videos') || (params[:controller] == 'search') || (params[:controller] == 'bios') || (params[:controller] == 'pages') && (params[:action] != 'edit') %>
-    <%= render 'layouts/header' %>
-  <% end %>
+    <% if ((params[:controller] == 'static_pages') || (params[:controller] == 'articles') || (params[:controller] == 'videos') || (params[:controller] == 'search') || (params[:controller] == 'bios') || (params[:controller] == 'pages')) && (params[:action] != 'edit') %>
+        <%= render 'layouts/header' %>
+      <% else %>
+        <%= render 'layouts/admin_header' %>
+      <% end %>
 
-	<%= yield %>
+  	<%= yield %>
 
-  <% if (params[:controller] == 'static_pages') || (params[:controller] == 'articles') || (params[:controller] == 'videos') || (params[:controller] == 'search') || (params[:controller] == 'bios') || (params[:controller] == 'pages') && (params[:action] != 'edit') %>
-    <%= render 'layouts/footer'%>
-    <% end %>
+    <% if ((params[:controller] == 'static_pages') || (params[:controller] == 'articles') || (params[:controller] == 'videos') || (params[:controller] == 'search') || (params[:controller] == 'bios') || (params[:controller] == 'pages')) && (params[:action] != 'edit') %>
+      <%= render 'layouts/footer'%>
+      <% end %>
 
-    <%= render 'layouts/ga' if Rails.env == "production" %>
-</body>
+      <%= render 'layouts/ga' if Rails.env == "production" %>
+  </body>
 </html>

@@ -7,6 +7,9 @@
 
 	<%= f.select(:page_type, options_for_select([['constuling'], ['litigation'], ['acquisitions'], ['marketing']])) %> <br />
 
+	<%= f.label :page_order, "Page Order" %>
+	<%= f.text_field :page_order, size: "2", maxlength: "2" %>
+
 	<%= f.label :seo_description %>
 	<%= f.text_area :seo_description, rows: 4, placeholder: "SEO Description" %> <br />
 
