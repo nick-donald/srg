@@ -537,19 +537,19 @@ span.large-title {
 }
 
 .consulting-icon {
-    background-position: -200px 10px;
+    background-position: -210px 10px;
 }
 
 .litigation-icon {
-    background-position: 0 -190px;
+    background-position: 10px -190px;
 }
 
 .finance-icon {
-    background-position: 0 10px;
+    background-position: 10px 10px;
 }
 
 .marketing-icon {
-    background-position: -200px -190px;
+    background-position: -210px -190px;
 }
 
 .mini-content {
@@ -737,9 +737,9 @@ span.large-title {
     overflow: auto;
     margin-left: auto;
     margin-right: auto;
-    text-align: center;
     margin-bottom: 50px;
     padding-bottom: 10px;
+    padding-left: 0;
 }
 
 .video {
@@ -750,6 +750,7 @@ span.large-title {
     padding: 20px 10px;
     border: solid thin #00008B;
     vertical-align: top;
+    margin-left: 0;
 }
 
 .video-pic {
@@ -767,6 +768,7 @@ span.large-title {
 
 .video-title {
     width: 100%;
+    text-align: center;
 }
 
 .video-title:hover {
@@ -822,45 +824,46 @@ span.large-title {
     margin-left: 5px;
     margin-right: 5px;
     background-size: contain;
+    background-image: url(spritesheet.png);
 }
 
 
-#publication-logos div:nth-child(1) {
+.nytimes {
     background-image: url(The_New_York_Times_logo.png);
 }
 
-#publication-logos div:nth-child(2) {
+.bloomberg {
     background-image: url(Bloomberg-logo.jpg);
 }
 
-#publication-logos div:nth-child(3) {
+.wsj {
     background-image: url(WSJ_logo.jpg);
 }
 
-#publication-logos div:nth-child(4) {
+.npr {
     background-image: url(npr_logo.JPG);
     background-size: contain;
 }
 
-#publication-logos div:nth-child(5) {
+.fox {
     background-image: url(Fox_business.jpg);
     background-size: contain;
 }
 
-#publication-logos div:nth-child(6) {
+.latimes {
     background-image: url(Latimes_logo.gif);
 }
 
-#publication-logos div:nth-child(7) {
+.usa {
     background-image: url(usa_today_01_logo.gif);
     background-size: contain;
 }
 
-#publication-logos div:nth-child(8) {
+.reuters {
     background-image: url('reuters_logo.gif');
 }
 
-#publication-logos div:nth-child(9) {
+.bbc {
     background-image: url('BBC_logo.jpeg');
     background-size: contain;
 }
@@ -951,10 +954,11 @@ span.large-title {
     display: inline-block;
     border-top: solid thin white;
     margin-bottom: 40px;
+    vertical-align: top;
 }
 
 .footer-link:hover, .contact:hover {
-    border-top: solid thin blue;
+    border-top: solid thin #00008B;
 }
 
 .right {
@@ -1001,10 +1005,6 @@ span.large-title {
         font-size: 1.7em;
     }
 
-    .consulting {
-
-    }
-
     .litigation {
         background-position: 55% 0;
     }
@@ -1030,8 +1030,6 @@ span.large-title {
     }
 
     .video {
-        margin: 10px 26px;
-        padding: 20px 5px;
     }
 
     .video-title span {
@@ -1188,10 +1186,9 @@ span.large-title {
     }
 
     .video {
-        margin: 10px 26px;
-        padding: 20px 5px;
+        margin: 10px auto;
         display: block;
-        width: 90%;
+        width: 80%;
     }
 
     .video-pic {
@@ -1226,7 +1223,7 @@ span.large-title {
     }
 
     .article {
-        width: 90%;
+        width: 80%;
     }
 
     .article-title span {
@@ -1558,16 +1555,13 @@ span.large-title {
     
     #video-container {
         width: 100%;
-        padding: 0;
     }
     
     .video {
         width: 90%;
-        height: auto;
         padding: 5px;
-        float: none;
-        margin-left: auto;
-        margin-right: auto;
+        display: block;
+        margin: 10px auto;
         overflow: hidden;
     }
     
