@@ -7,10 +7,6 @@
 <% if signed_in? %>
 	<div class="section-title"><span>You are signed in as <%= @user.username %></span></div>
 
-	<div class="page-post">
-		<%= render 'shared/page_form' %>
-	</div>
-
 	<div class="content-post bio-post">
 		<%= render 'shared/bio_form' %>
 	</div>
