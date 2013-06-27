@@ -11,6 +11,10 @@
 User.delete_all
 User.create(name: 'admin', username: 'admin', password: 'admin', password_confirmation: 'admin')
 
+# seed pages
+Page.delete_all
+Page.create(title: 'Consulting for Retailers', url_title: 'retailers', page_type: 'consulting', :seo_description: '', seo_keywords: '', content: '')
+
 # seed bios
 Bio.delete_all
 Bio.create(name: 'Burt Flickinger',content: '<p>Widely known and recognized as a leading expert on all aspects of the supermarket wholesaling and retailing industry, Burt has worked as a consultant for top retail chains around the globe. His family has been in the wholesale, vertically and horizontally integrated private label production, manufacturing, and branding businesses for four generations since his great grandfather founded S.M. Flickinger Company &ndash; the largest supermarket wholesaler/retailer headquartered in the eastern U.S. prior to its acquisition by Metro Haniel Europe, the owner of Scrivner. The Flickingers and FMI, National Association of Wholesale Grocers (NAWGA), and Food Distribution Institute (FDI) had a partnership across four generations in the horizontal and vertical development of Federated Foods (which the Flickinger family founded) full line private label brands. Burt, his father, grandfather, and great grandfather worked in partnership with the Fleming, Nash, Finch, Albertsons, and other regional co-op families and corporations.</p>

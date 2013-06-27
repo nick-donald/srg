@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
+		
 		@article = current_user.articles.build if signed_in?
 		@articles = Article.paginate(page: params[:page],  per_page: 10)
 
@@ -14,6 +15,9 @@ class UsersController < ApplicationController
 
   		@bio = current_user.bios.build if signed_in?
   		@bios = Bio.paginate(page: params[:page],  per_page: 10)
+
+  		@page = current_user.pages.build if signed_in?
+  		@pages = Page.paginate(page: params[:page], per_page: 10)
 	end
 
 	def new

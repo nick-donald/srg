@@ -13,13 +13,13 @@
 </head>
 <body>
 
-  <% if (params[:controller] == 'static_pages') || (params[:controller] == 'articles') || (params[:controller] == 'videos') || (params[:controller] == 'search') || (params[:controller] == 'bios') && (params[:action] != 'edit') %>
+  <% if (params[:controller] == 'static_pages') || (params[:controller] == 'articles') || (params[:controller] == 'videos') || (params[:controller] == 'search') || (params[:controller] == 'bios') || (params[:controller] == 'pages') && (params[:action] != 'edit') %>
     <%= render 'layouts/header' %>
   <% end %>
 
 	<%= yield %>
 
-  <% if (params[:controller] == 'static_pages') || (params[:controller] == 'articles') || (params[:controller] == 'videos') || (params[:controller] == 'search') || (params[:controller] == 'bios') && (params[:action] != 'edit') %>
+  <% if (params[:controller] == 'static_pages') || (params[:controller] == 'articles') || (params[:controller] == 'videos') || (params[:controller] == 'search') || (params[:controller] == 'bios') || (params[:controller] == 'pages') && (params[:action] != 'edit') %>
     <%= render 'layouts/footer'%>
     <% end %>
 

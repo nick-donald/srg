@@ -1,0 +1,20 @@
+<%= form_for(@page) do |f| %>
+	<%= f.label :title, "Page Header" %>
+	<%= f.text_field :title %>
+
+	<%= f.label :url_title, "URL Title" %>
+	<%= f.text_field :url_title, placeholder: "URL Title" %>
+
+	<%= f.select(:page_type, options_for_select([['constuling'], ['litigation'], ['acquisitions'], ['marketing']])) %> <br />
+
+	<%= f.label :seo_description %>
+	<%= f.text_area :seo_description, rows: 4, placeholder: "SEO Description" %> <br />
+
+	<%= f.label :seo_keywords %>
+	<%= f.text_area :seo_keywords, rows: 4, placeholder: "SEO Keywords" %> <br />
+
+	<%= f.label :content %>
+	<%= f.cktext_area :content %>
+
+	<%= f.submit "Post", class: "btn" %>
+<% end %>

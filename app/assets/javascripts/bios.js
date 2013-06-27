@@ -9,13 +9,26 @@ $(document).ready(function(){
             $(this).toggleClass('selected-admin-input');
             $(this).siblings().removeClass('selected-admin-input');
             $('.bios-dashboard').show();
-            $('.articles-dashboard, .videos-dashboard').hide();
+            $('.articles-dashboard, .videos-dashboard, .pages-dashboard').hide();
         }
     });
 
     $('.new-bio').click(function() {
-            $('.bio-post').toggle();
-        });
+        $('.bio-post').toggle();
+    });
+
+    $('.pages-select').click(function(){
+        if ($(this).hasClass('selected-admin-input')) {
+            return;
+        }
+
+        else {
+            $(this).toggleClass('selected-admin-input');
+            $(this).siblings().removeClass('selected-admin-input');
+            $('.pages-dashboard').show();
+            $('.articles-dashboard, .videos-dashboard, .bios-dashboard').hide();
+        }
+    })
 
     $('.alert').delay(2000).fadeOut();
 

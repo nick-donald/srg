@@ -18,7 +18,7 @@ class Video < ActiveRecord::Base
                     :path => ":attachment/videos/:id/:style.:extension",
                     :bucket => 'srginsightbucket'
 
-  def to_param
- 	  "#{id} #{title}".parameterize
- 	end
+  # def to_param
+ 	#   "#{id} #{title}".parameterize
+ 	# end
 end

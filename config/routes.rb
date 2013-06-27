@@ -5,6 +5,7 @@ SRG::Application.routes.draw do
   resources :videos
   resources :search
   resources :bios
+  resources :pages
 
   get "static_pages/home"
 
@@ -46,6 +47,8 @@ SRG::Application.routes.draw do
 
   # articles routes
   match '/articles2', to: 'static_pages#articles2'
+
+  # get '/test', to: 'pages#show', defaults: { id: 'stuff' }
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,0 +1,11 @@
+<%= form_for(@page) do |f| %>
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+	
+	<%= f.select(:page_type, options_for_select([['constuling'], ['litigation'], ['acquisitions'], ['marketing']])) %> <br />
+
+	<%= f.label :content %>
+	<%= f.cktext_area :content %>
+
+	<%= f.submit "Submit Changes", class: "btn" %>
+<% end %>

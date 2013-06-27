@@ -180,7 +180,7 @@ $(document).ready(function(){
             $(this).toggleClass('selected-admin-input');
             $(this).siblings().removeClass('selected-admin-input');
             $('.articles-dashboard').show();
-            $('.videos-dashboard, .bios-dashboard').hide();
+            $('.videos-dashboard, .bios-dashboard, .pages-dashboard').hide();
         }
     });
 
@@ -193,7 +193,7 @@ $(document).ready(function(){
             $(this).toggleClass('selected-admin-input');
             $(this).siblings().removeClass('selected-admin-input');
             $('.videos-dashboard').show();
-            $('.articles-dashboard, .bios-dashboard').hide();
+            $('.articles-dashboard, .bios-dashboard, .pages-dashboard').hide();
         }
     });
 

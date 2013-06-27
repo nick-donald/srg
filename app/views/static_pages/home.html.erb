@@ -126,24 +126,22 @@
                     </div>
                 </div>
             </div>
-            <div class="bigarrow">
+            <!-- <div class="bigarrow">
                 <div class="arrow-text">
                     <span>Check out the latest from Managing Director Burt Flickinger</span>
                 </div>
                 <div class="small-arrow">
                     
                 </div>
-            </div>
+            </div> -->
         </div>
         <div id="video-news">
             <div class="section-title white">
                 <span>Video News</span>
             </div>
-            <div id="video-container">
-                <div class="video">
-                    <div class="video-pic vid-pic">
-                        
-                    </div>
+            <ul id="video-container">
+                <li class="video">
+                    <div class="video-pic vid-pic"></div>
                     <div class="video-title">
                         <a href="videos/<%= @video.id %>"><span><%= @video.title %></span></a>
                     </div>
@@ -151,30 +149,26 @@
                         <span><%= @video.date.strftime("%b %d") %> (<%= @video.publication %>) -- <%= truncate(@video.description, length: 170, seperator: " ") %></span>
                     </div>
                     
-                </div>
-                <div id="middle-video" class="video">
-                    <div class="video-pic vid-pic1">
-                        
-                    </div>
+                </li>
+                <li class="video">
+                    <div class="video-pic vid-pic1"></div>
                     <div class="video-title">
                         <a href="videos/<%= @video_1.id %>"><span><%= @video_1.title %></span></a>
                     </div>
                     <div class="video-description">
                         <span><%= @video_1.date.strftime("%b %d") %> (<%= @video_1.publication %>) -- <%= truncate(@video_1.description, length: 170, seperator: " ") %></span>
                     </div>
-                </div>
-                <div class="video">
-                    <div class="video-pic vid-pic2">
-                        
-                    </div>
+                </li>
+                <li class="video">
+                    <div class="video-pic vid-pic2"></div>
                     <div class="video-title">
                         <a href="videos/<%= @video_2.id %>"><span><%= @video_2.title %></span></a>
                     </div>
                     <div class="video-description">
                         <span><%= @video_2.date.strftime("%b %d") %> (<%= @video_2.publication %>) -- <%= truncate(@video_2.description, length: 170, seperator: " ") %></span>
                     </div>
-                </div>  
-            </div>
+                </li>  
+            </ul>
         </div>
         <div id="news">
             <div class="inner-container">

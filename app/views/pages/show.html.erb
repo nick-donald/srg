@@ -1,0 +1,30 @@
+<% provide(:title, @page.url_title.capitalize) %>
+
+<div class="detail-page">
+	<div class="wrapper">
+		<div class="main-content-container">
+			<aside>
+				<div class="side-nav-container">
+					<ul class="side-nav">
+						<% @pages.each do |page| %>
+							<% if page.page_type == @page.page_type %>
+								<%= content_tag :li, class: @page == page ? "selected-side-nav": "" do 
+										link_to page.url_title.capitalize, page 
+									end 
+								%>
+							<% end %>
+						<% end %>
+					</ul>
+				</div>
+			</aside>
+			<div class="detail-content pull-right">
+				<div class="section-title left-align">
+					<%= content_tag(:span, @page.title) %>
+				</div>
+				<div class="section-detail-text">
+					<%= sanitize @page.content %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

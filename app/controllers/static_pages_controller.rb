@@ -29,4 +29,5 @@ class StaticPagesController < ApplicationController
   	@articles = current_user.articles.build
   	@feed_items = current_user.feed.paginate(page: params[:page])
   end
+  
 end
