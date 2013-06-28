@@ -33,10 +33,7 @@
 	</div>
 <div class="admin-dashboard articles-dashboard">
 
-	<%= page_entries_info @articles %>
-	<%= will_paginate @articles %>
-
-<table class="admin-table">
+	<table class="admin-table pages-table">
 		<thead>
 			<tr>
 				<th scope="col" class="first-col">Article Title</th>
@@ -59,16 +56,10 @@
 			<% end %>
 		</tbody>
 	</table>
-
-	<%= will_paginate @articles %>
 </div>
 
 <div class="admin-dashboard videos-dashboard">
-
-	<%= page_entries_info @videos %>
-	<%= will_paginate @videos %>
-
-<table class="admin-table">
+	<table class="admin-table pages-table">
 		<thead>
 			<tr>
 				<th scope="col" class="first-col">Video Title</th>
@@ -89,16 +80,10 @@
 			<% end %>
 		</tbody>
 	</table>
-
-	<%= will_paginate @videos %>
 </div>
 
 <div class="admin-dashboard bios-dashboard">
-
-	<%= page_entries_info @bios %>
-	<%= will_paginate @bios %>
-
-<table class="admin-table">
+	<table class="admin-table pages-table">
 		<thead>
 			<tr>
 				<th scope="col" class="first-col">Bio Name</th>
@@ -117,16 +102,10 @@
 			<% end %>
 		</tbody>
 	</table>
-
-	<%= will_paginate @bios %>
 </div>
 
 <div class="admin-dashboard pages-dashboard">
-
-	<%= page_entries_info @pages %>
-	<%= will_paginate @pages %>
-
-	<table class="admin-table">
+	<table class="admin-table pages-table">
 		<thead>
 			<tr>
 				<th scope="col" class="first-col">Page Title</th>
@@ -136,7 +115,7 @@
 		</thead>
 		<tbody>
 			<% @pages.each do |page| %>
-				<tr class="admin-article">
+				<tr>
 					<td><span><%= link_to page.title, page, class: "admin-article-title" %> |
 					<%= link_to "Edit", edit_page_path(page), class: "admin-edit" %></span></td>
 					<td><span><%= page.page_type %></span></td>
@@ -145,8 +124,6 @@
 			<% end %>
 		</tbody>
 	</table>
-
-	<%= will_paginate @pages %>
 </div>
 
 

@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   		@bios = Bio.paginate(page: params[:page],  per_page: 10)
 
   		@page = current_user.pages.build if signed_in?
-  		@pages = Page.paginate(page: params[:page], per_page: 10)
+  		@pages = Page.all
 	end
 
 	def new

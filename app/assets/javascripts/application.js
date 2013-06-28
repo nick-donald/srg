@@ -14,5 +14,6 @@
 //= require jquery_ujs
 //= require jquery-ui.min
 //= require ckeditor/init
+//= require dataTables/jquery.dataTables
 //= require_tree .
 
