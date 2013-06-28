@@ -10,6 +10,7 @@
 		<%= f.label :url_title, "URL Title" %>
 		<%= f.text_field :url_title %>
 
+		<%= f.select(:page_type, options_for_select([['consulting'], ['litigation'], ['acquisitions'], ['marketing']])) %> <br />
 
 		<%= f.label :page_order, "Page Order" %>
 		<%= f.text_field :page_order, size: "2", maxlength: "2" %>
