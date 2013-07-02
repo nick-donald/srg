@@ -15,8 +15,8 @@ class Article < ActiveRecord::Base
  	scope :recent, limit: 1, order: 'created_at DESC'
 
  	include PgSearch
- 	multisearchable against: [:title, :short_description]
- 	pg_search_scope :search_by_info, :against => [:title, :short_description]
+ 	multisearchable against: [:title, :short_description, :content]
+ 	pg_search_scope :search_by_info, :against => [:title, :short_description, :content]
 
  	def to_param
  		"#{id} #{title}".parameterize
