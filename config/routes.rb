@@ -39,8 +39,8 @@ SRG::Application.routes.draw do
   match '/marketing/brandbuilding', to: 'pages#show', defaults: { id: 'brand-building' }
 
   # other page links 
-  # match '/bios', to: 'static_pages#bios'
   match '/press', to: 'static_pages#press_main'
+  match '/about', to: 'static_pages#about'
 
   # user routes
   match '/signup', to: 'users#new'
