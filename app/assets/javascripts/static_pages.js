@@ -205,5 +205,13 @@ $(document).ready(function(){
         $('.video-post').toggle();
     });
 
+    $('.latimes').hover(function(){
+        $('.pulitzer-explain').fadeIn();
+    },
+        function(){
+            $('.pulitzer-explain').fadeOut();
+        }
+    );
+
 
 });
