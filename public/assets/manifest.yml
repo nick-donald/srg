@@ -34,6 +34,7 @@ mobile_menu.png: mobile_menu-58a4005ea04277ed9ddc0dc68555a25e.png
 newspapers.jpg: newspapers-27ef52d74bdf97d6b71265752593ecaa.jpg
 npr_logo.JPG: npr_logo-84179617eb15b54c2b82b614fb6a906b.JPG
 nyc_bg.jpg: nyc_bg-717b1f68c959d1efa78dacf22b72f68b.jpg
+nyc_bg2.jpg: nyc_bg2-965f2e5c51a30da9bc93303b5bd1cc15.jpg
 pulitzer-prize.jpg: pulitzer-prize-74c58993f61034c5d9488c5a4570d4cc.jpg
 quote.png: quote-9cf0f803bdbc9645b2a73d6957881658.png
 reuters_logo.gif: reuters_logo-006c91014c28f00676b1ff86caa69685.gif
@@ -45,8 +46,8 @@ usa_today_01_logo.gif: usa_today_01_logo-42db9db782c3162010feffcfa52d3df6.gif
 videos-news.jpg: videos-news-3133b3603c07bc4742807948b6619dad.jpg
 wholesalers.jpg: wholesalers-709334c675a801ce1a036674d293f72c.jpg
 witness.png: witness-0a552ebbab294a565684be80f2883c89.png
-application.js: application-adfeebc7b1884b5d09e15519e7b234ef.js
-application.css: application-b9b6cb4b7e98dd152b0cc3805bc6ff31.css
+application.js: application-092a9bc0d488c74e82d7c0906c1b4c38.js
+application.css: application-58557dab55b33e849c2a3f1c48a052bc.css
 jquery-ui/animated-overlay.gif: jquery-ui/animated-overlay-691b2d4343303de8d214ad5395fd895d.gif
 jquery-ui/ui-bg_flat_0_aaaaaa_40x100.png: jquery-ui/ui-bg_flat_0_aaaaaa_40x100-a1eb3e0764573ed4b261ca742ed96ac3.png
 jquery-ui/ui-bg_flat_75_ffffff_40x100.png: jquery-ui/ui-bg_flat_75_ffffff_40x100-841636c8f8d33987bb8d2f31e8ef92ca.png

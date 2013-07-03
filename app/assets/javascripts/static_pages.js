@@ -213,5 +213,9 @@ $(document).ready(function(){
         }
     );
 
+    $('.h1').click(function(){
+        $('body,html').animate({ scrollTop: $('.explain-box').position().top });        
+    });
+    
 
 });
