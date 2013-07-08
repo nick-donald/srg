@@ -17,6 +17,7 @@ class BiosController < ApplicationController
 
 	def edit
 		@bio = Bio.find(params[:id])
+		@bios = Bio.all
 	end
 
 	def update

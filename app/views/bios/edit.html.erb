@@ -7,6 +7,15 @@
 		<%= f.label :name, class: "form-title" %>
 		<%= f.text_field :name %>
 
+		<% array = Array.new %>
+		<% for i in 1..@bios.count %>
+			<% array << i %>
+		<% end %>
+
+		<%= f.label :bio_order, "Bio Order", class: "form-title" %> <br />
+		<%= f.select(:bio_order, options_for_select(array.map)) %>
+		<br />
+
 		<%= f.label :content, class: "form-title" %>
 		<%= f.cktext_area :content %>
 
