@@ -32,4 +32,14 @@ $(document).ready(function(){
 
     $('.alert').delay(2000).fadeOut();
 
+    
+    $('#video_description').focusout(function(){
+        value = $(this).val();
+        $('#video_seo_description').val(value);
+    });
+    $('#video_title').focusout(function(){
+        value = $(this).val();
+        $('#video_seo_title').val(value);
+    });
+
 });

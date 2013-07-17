@@ -14,7 +14,7 @@ class StaticPagesController < ApplicationController
 
     videos = Video.select { |video| video.enabled == true }
 
-    videos_sort = videos.sort! { |a,b| b.created_at <=> a.created_at }
+    videos_sort = videos.sort! { |a,b| b.date <=> a.date }
 
     @video = videos_sort[0]
     @video_1 = videos_sort[1]
