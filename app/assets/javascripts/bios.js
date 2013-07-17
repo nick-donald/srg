@@ -41,5 +41,13 @@ $(document).ready(function(){
         value = $(this).val();
         $('#video_seo_title').val(value);
     });
+    $('#article_short_description').focusout(function(){
+        value = $(this).val();
+        $('#article_seo_description').val(value);
+    });
+    $('#article_title').focusout(function(){
+        value = $(this).val();
+        $('#article_seo_title').val(value);
+    });
 
 });
