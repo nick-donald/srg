@@ -22,7 +22,7 @@ SRG::Application.routes.draw do
   # litigation links
   match '/litigation', to: 'static_pages#litigation_main'
   match '/litigation/dispute', to: 'pages#show', defaults: { id: 'dispute-advisory' }
-  match '/litigation/antitrust', to: 'pages#show', defaults: { id: 'anti-trust' }
+  match '/litigation/antitrust', to: 'pages#show', defaults: { id: 'antitrust' }
   match '/litigation/expertwitness', to: 'pages#show', defaults: { id: 'expert-witness' }
   match '/litigation/takeoverdefense', to: 'pages#show', defaults: { id: 'takeover-defense' }
 
