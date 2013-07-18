@@ -28,7 +28,7 @@ SRG::Application.routes.draw do
 
   # financial services links
   match '/acquisitions-ftc', to: 'static_pages#finance_main'
-  match '/acquisitions-ftc/duedilligence', to: 'pages#show', defaults: { id: 'due-dilligence' }
+  match '/acquisitions-ftc/duediligence', to: 'pages#show', defaults: { id: 'due-diligence' }
   match '/acquisitions-ftc/ma', to: 'pages#show', defaults: { id: 'mergers-acquisitions' }
   match '/acquisitions-ftc/ftc', to: 'pages#show', defaults: { id: 'ftc-expertise' }
 
